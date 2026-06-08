@@ -157,6 +157,11 @@ body {
   font-family: Unbounded;
   font-size: var(--other-text-size);
   color: var(--nav-links-color);
+  transition: color .3s ease-in-out;
+}
+
+.menu li a:hover {
+  color: var(--hover-color);
 }
 
 .header_contacts {
