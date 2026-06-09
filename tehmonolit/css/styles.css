@@ -139,7 +139,6 @@ body {
 
 .menu li a {
   font-family: Unbounded;
-<<<<<<< HEAD
   font-size: 16px;
   color: #353535;
   transition: color .3s ease-in-out;
@@ -149,15 +148,6 @@ body {
 .menu li .active,
 .menu li a:hover {
   color: #FF6824;
-=======
-  font-size: var(--other-text-size);
-  color: var(--nav-links-color);
-  transition: color .3s ease-in-out;
-}
-
-.menu li a:hover {
-  color: var(--hover-color);
->>>>>>> 83180fa3e83fee17c4d61ed7acf9c8fd9e8d46c9
 }
 
 .header_contacts {
