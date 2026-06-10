@@ -355,6 +355,7 @@ footer .container .phone {
   /* grid-row: 3;
   grid-column: span 2;
   justify-self: end; */
+  display: none;
   width: 34px;
   height: 34px;
   border-radius: 12px;
@@ -367,6 +368,10 @@ footer .container .phone {
     max-height: fit-content;
     grid-template-columns: 1fr 1fr;
     gap: 0;
+  }
+
+  .social_link.menu_max {
+    display: block;
   }
 
   .header_box .menu_wrap {
