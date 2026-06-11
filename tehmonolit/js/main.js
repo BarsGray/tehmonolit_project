@@ -23,3 +23,18 @@ function openMenu() {
 
 menuButton.addEventListener('click', openMenu);
 overlay.addEventListener('click', openMenu);
+
+
+
+const swiper = new Swiper('.autopark_swiper', {
+  slidesPerView: 4,
+  normalizeSlideIndex: false,
+  navigation: {
+    nextEl: ".btn_next",
+    prevEl: ".btn_prev"
+  },
+  scrollbar: {
+    el: ".swiper-scrollbar"
+  },
+  mousewheel: true
+});
