@@ -151,22 +151,6 @@ header .container {
   transition: all .3s ease-in-out;
 }
 
-/* header {
-  padding-top: 30px;
-} */
-
-/* header.active {
-  padding-bottom: 78px;
-  padding-top: 30px;
-}
-
-header.active .container {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 999;
-} */
-
 body {
   font-family: 'Unbounded';
   background-color: #F4F4F4;
@@ -494,7 +478,7 @@ footer .container .phone {
 }
 
 .autopark_slider {
-  padding: 50px;
+  padding: 50px 0;
 }
 
 .autopark_slider .top_row {
@@ -512,12 +496,9 @@ footer .container .phone {
 
 .autopark_slider .slider_row {
   display: flex;
-  gap: 24px;
 }
 
 .autopark_slider .slider_item {
-  min-width: 348px;
-
   max-width: 348px;
   display: flex;
   flex-direction: column;
@@ -528,7 +509,7 @@ footer .container .phone {
 .autopark_slider .slider_item img {
   width: 100%;
   border-radius: 16px;
-  height: 240px;
+  height: 260px;
   object-fit: cover;
 }
 
@@ -564,7 +545,23 @@ footer .container .phone {
 .slider_row {
   padding-bottom: 28px;
 }
+
+.autopark_slider .title {
+  color: #202020;
+  line-height: 1.3;
+  font-size: 34px;
+}
+
+.autopark_swiper .swiper-scrollbar-horizontal, .swiper-horizontal {
+  width: 100%;
+  left: 0;
+}
+
 .swiper-scrollbar {
+  background-color: #DBDBDB;
+}
+.swiper-scrollbar-drag {
+  background-color: #FFCF30;
 }
 
 @media (max-width: 1516px) {

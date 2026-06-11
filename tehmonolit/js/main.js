@@ -27,7 +27,8 @@ overlay.addEventListener('click', openMenu);
 
 
 const swiper = new Swiper('.autopark_swiper', {
-  slidesPerView: 4,
+  slidesPerView: 'auto',
+  spaceBetween: 24,
   normalizeSlideIndex: false,
   navigation: {
     nextEl: ".btn_next",
