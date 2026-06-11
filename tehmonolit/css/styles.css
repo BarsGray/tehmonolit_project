@@ -494,6 +494,20 @@ footer .container .phone {
   gap: 28px;
 }
 
+.autopark_slider .show_all {
+  position: relative;
+  font-size: 16px;
+  padding-right: 24px;
+}
+
+.autopark_slider .show_all::before {
+  content: '>';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
 .autopark_slider .slider_row {
   display: flex;
 }
@@ -543,7 +557,7 @@ footer .container .phone {
 }
 
 .slider_row {
-  padding-bottom: 28px;
+  padding-bottom: 30px;
 }
 
 .autopark_slider .title {
@@ -552,14 +566,17 @@ footer .container .phone {
   font-size: 34px;
 }
 
-.autopark_swiper .swiper-scrollbar-horizontal, .swiper-horizontal {
+.autopark_swiper .swiper-scrollbar-horizontal,
+.autopark_swiper .swiper-horizontal {
   width: 100%;
   left: 0;
+  height: 6px;
 }
 
 .swiper-scrollbar {
   background-color: #DBDBDB;
 }
+
 .swiper-scrollbar-drag {
   background-color: #FFCF30;
 }
