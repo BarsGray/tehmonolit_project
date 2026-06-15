@@ -426,6 +426,7 @@ body {
 
 footer {
   padding: 40px 0 26px;
+  background-color: #fff;
 }
 
 footer .container {
@@ -479,7 +480,7 @@ footer .container .phone {
 }
 
 .autopark_slider {
-  padding: 50px 0;
+  padding: 0 0 60px;
 }
 
 .autopark_slider .top_row {
@@ -538,6 +539,7 @@ footer .container .phone {
   padding: 5px 13px;
   border-radius: 12px;
   border: 1px solid #C8C8C8;
+  background-color: #fff;
 }
 
 .autopark_slider .name {
@@ -553,11 +555,18 @@ footer .container .phone {
 
 .autopark_slider .btn {
   font-size: 16px;
-  padding: 15px 26px;
+  padding: 14px 26px;
   border-radius: 16px;
   border: 2px solid #282828;
   display: block;
   width: fit-content;
+  background-color: #fff;
+  transition: all .3s ease-in-out;
+}
+
+.autopark_slider .btn:hover {
+  background-color: #282828;
+  color: #fff;
 }
 
 .slider_row {
@@ -580,11 +589,26 @@ footer .container .phone {
   padding: 10px;
   border-radius: 16px;
   border: 2px solid #282828;
-  transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out, transform .2s ease, box-shadow .2s ease;
   position: relative;
   width: 44px;
   height: 44px;
   display: block;
+  background-color: #fff;
+}
+
+.autopark_slider .btn_next:active,
+.autopark_slider .btn_prev:active {
+  /* box-shadow: 0px 4px 7px -4px rgba(40, 40, 40, 0.4); */
+  transform: translateY(1px);
+}
+
+.autopark_slider .swiper-button-disabled:active {
+  transform: translateY(0);
+}
+
+.autopark_slider .swiper-button-disabled:active {
+  transform: translateY(0);
 }
 
 .autopark_slider .btn_prev::after,
@@ -646,12 +670,75 @@ footer .container .phone {
   height: 6px;
 }
 
-.swiper-scrollbar {
+.autopark_swiper .swiper-scrollbar {
   background-color: #DBDBDB;
 }
 
-.swiper-scrollbar-drag {
+.autopark_swiper .swiper-scrollbar-drag {
   background-color: #FFCF30;
+}
+
+.advantages {
+  padding: 60px 0;
+}
+
+.advantages_icon {
+  width: 64px;
+  height: 64px;
+}
+
+.advantages .title {
+  font-size: 34px;
+  margin-bottom: 40px;
+}
+
+.advantages_box {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 40px;
+  background-color: #fff;
+  border-radius: 24px;
+}
+
+.advantages_item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  line-height: 1.4;
+}
+
+.advantages_title {
+  font-size: 24px;
+}
+
+.advantages_text {
+  color: #767676;
+  font-size: 16px;
+}
+
+.advantages_icon_1 {
+  background: url('../img/icon-5.svg') no-repeat center / contain;
+}
+
+.advantages_icon_2 {
+  background: url('../img/icon-3.svg') no-repeat center / contain;
+}
+
+.advantages_icon_3 {
+  background: url('../img/icon-3.svg') no-repeat center / contain;
+}
+
+.advantages_icon_4 {
+  background: url('../img/icon-2.svg') no-repeat center / contain;
+}
+
+.advantages_icon_5 {
+  background: url('../img/icon-1.svg') no-repeat center / contain;
+}
+
+.advantages_icon_6 {
+  background: url('../img/icon.svg') no-repeat center / contain;
 }
 
 @media (max-width: 1516px) {

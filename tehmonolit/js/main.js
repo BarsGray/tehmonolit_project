@@ -35,7 +35,7 @@ const swiper = new Swiper('.autopark_swiper', {
     prevEl: ".btn_prev"
   },
   scrollbar: {
-    el: ".swiper-scrollbar"
+    el: ".autopark_slider .swiper-scrollbar"
   },
-  mousewheel: true
+  // mousewheel: true
 });
