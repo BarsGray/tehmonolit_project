@@ -32,6 +32,7 @@ overlay.addEventListener('click', openMenu);
 // ======================= swiper =============
 const autopark_swiper = new Swiper('.autopark_swiper', {
   slidesPerView: 'auto',
+  spaceBetween: 12,
   normalizeSlideIndex: false,
   navigation: {
     nextEl: ".autopark_slider .btn_next",
@@ -41,8 +42,7 @@ const autopark_swiper = new Swiper('.autopark_swiper', {
     el: ".autopark_slider .swiper-scrollbar"
   },
   breakpoints: {
-    1000: { spaceBetween: 24, },
-    640: { spaceBetween: 12, },
+    1000: { spaceBetween: 24, }
   },
 });
 const foto_slider_swiper = new Swiper('.foto_slider', {

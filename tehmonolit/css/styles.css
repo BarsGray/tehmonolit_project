@@ -590,7 +590,7 @@ footer .container .phone {
   font-size: 34px;
 }
 
-.right_box {
+.autopark_slider .right_box {
   display: flex;
   gap: 16px;
 }
@@ -996,10 +996,14 @@ footer .container .phone {
 
   .autopark_slider .btn {
     font-size: 14px;
+    padding: 7px 22px;
+    border-radius: 12px;
   }
+
   .autopark_slider .slider_item {
     width: 228px;
   }
+
   .autopark_slider .slider_item img {
     height: 170px;
   }
@@ -1090,6 +1094,11 @@ footer .container .phone {
 }
 
 @media (max-width: 640px) {
+  .header_box {
+    padding: 12px;
+    border-radius: 28px;
+  }
+
   footer .menu li a {
     font-size: 14px;
   }
@@ -1109,6 +1118,34 @@ footer .container .phone {
 
   .logo img {
     width: 166px;
+  }
+
+  .autopark_slider .right_box {
+    display: none;
+  }
+
+  .autopark_slider .left_box {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .autopark_slider .param {
+    font-size: 10px;
+  }
+  .autopark_slider .name {
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+  .autopark_slider .price {
+    font-size: 20px;
+  }
+
+  .autopark_slider .slider_item img {
+    height: 152px;
+  }
+
+  .autopark_slider .slider_item {
+    width: 192px;
   }
 }
 
@@ -1183,6 +1220,13 @@ footer .container .phone {
 
   .bunner .text {
     width: 100%;
+  }
+  .header_box {
+    padding: 8px;
+    border-radius: 20px;
+  }
+  .bunner {
+    padding: 10px 0 40px;
   }
 }
 
