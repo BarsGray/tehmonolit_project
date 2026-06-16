@@ -103,6 +103,16 @@ a {
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Unbounded';
+  font-weight: 200;
+  font-style: normal;
+  src: local('Unbounded'),
+    url('../fonts/Unbounded-ExtraLight.woff') format('woff'),
+    url('../fonts/Unbounded-ExtraLight.woff2') format('woff2');
+  font-display: swap;
+}
+
 /* =========================== font ====================================== */
 
 .overlay {
@@ -546,6 +556,7 @@ footer .container .phone {
   margin-bottom: 20px;
   font-size: 24px;
   color: #686868;
+  display: block;
 }
 
 .autopark_slider .price {
@@ -741,6 +752,116 @@ footer .container .phone {
   background: url('../img/icon.svg') no-repeat center / contain;
 }
 
+.foto_slider_on_main {
+  padding: 60px 0 120px;
+}
+
+.foto_slider.swiper {
+  overflow: visible;
+}
+
+.foto_slider_container {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0 128px;
+}
+
+.foto_slider {
+  max-width: calc(1464px + 52px);
+  padding: 0 26px;
+}
+
+.foto_slider a {
+  display: block;
+}
+
+.foto_slider .foto_slider_item,
+.foto_slider a,
+.foto_slider {
+  max-height: 620px;
+}
+
+.foto_slider_item {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.foto_slider_item img {
+  width: 100%;
+  height: 100%;
+}
+
+.foto_slider_on_main .btn_prev,
+.foto_slider_on_main .btn_next {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  height: 68px;
+  width: 68px;
+  border-radius: 24px;
+  border: 2px solid #282828;
+  transition: all .2s;
+}
+
+.foto_slider_on_main .btn_next {
+  transform: translate(calc(-50% + 42px), 0);
+  background: url('../img/cevron_next_36.svg') no-repeat center / 36px 36px;
+}
+
+.foto_slider_on_main .btn_prev {
+  transform: translate(calc(-50% - 42px), 0);
+  background: url('../img/cevron_prev_36.svg') no-repeat center / 36px 36px;
+}
+
+.foto_slider_on_main .btn_next:active {
+  transform: translate(calc(-50% + 42px), 2px);
+}
+
+.foto_slider_on_main .btn_prev:active {
+  transform: translate(calc(-50% - 42px), 2px);
+}
+
+.foto_slider_top_row {
+  padding-bottom: 20px;
+}
+
+.foto_slider_top_row .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.foto_slider_top_row .title {
+  font-size: 34px;
+  line-height: 1.3;
+}
+
+.foto_slider_top_row .text {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  font-weight: 200;
+  color: #202020;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.foto_slider_top_row .btn {
+  line-height: 1.4;
+  font-size: 16px;
+  padding: 14px 26px;
+  border-radius: 16px;
+  border: 2px solid #282828;
+  display: block;
+  width: fit-content;
+  background-color: #fff;
+  transition: all .3s ease-in-out;
+}
+
+.foto_slider_top_row .btn:hover {
+  background-color: #282828;
+  color: #fff;
+}
+
 @media (max-width: 1516px) {
   .img_bg {
     margin-top: calc(23vw - 800px);
@@ -852,6 +973,35 @@ footer .container .phone {
     margin-top: 40px;
     gap: 12px;
     padding-left: 20px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .autopark_slider .title {
+    font-size: 28px;
+  }
+
+  .autopark_slider .param {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  .autopark_slider .name {
+    font-size: 20px;
+  }
+
+  .autopark_slider .price {
+    font-size: 20px;
+  }
+
+  .autopark_slider .btn {
+    font-size: 14px;
+  }
+  .autopark_slider .slider_item {
+    width: 228px;
+  }
+  .autopark_slider .slider_item img {
+    height: 170px;
   }
 }
 

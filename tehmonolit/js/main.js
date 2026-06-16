@@ -1,12 +1,17 @@
-window.addEventListener('scroll', function () {
+// ======================= header =============
+
+function scrollTop() {
   let scroll_scr = window.scrollY;
   if (scroll_scr > 0) {
     document.querySelector('header').classList.add('active');
   } else {
     document.querySelector('header').classList.remove('active');
   }
-});
+}
+scrollTop();
+window.addEventListener('scroll', scrollTop);
 
+// ======================= menu =============
 const menuButton = document.querySelector('.burger_menu_btn');
 const svgMenuButton = document.querySelector('.burger_menu_btn .ham');
 const headerMenu = document.querySelector('.menu_wrap');
@@ -24,18 +29,30 @@ function openMenu() {
 menuButton.addEventListener('click', openMenu);
 overlay.addEventListener('click', openMenu);
 
-
-
-const swiper = new Swiper('.autopark_swiper', {
+// ======================= swiper =============
+const autopark_swiper = new Swiper('.autopark_swiper', {
   slidesPerView: 'auto',
-  spaceBetween: 24,
   normalizeSlideIndex: false,
   navigation: {
-    nextEl: ".btn_next",
-    prevEl: ".btn_prev"
+    nextEl: ".autopark_slider .btn_next",
+    prevEl: ".autopark_slider .btn_prev"
   },
   scrollbar: {
     el: ".autopark_slider .swiper-scrollbar"
   },
-  // mousewheel: true
+  breakpoints: {
+    1000: { spaceBetween: 24, },
+    640: { spaceBetween: 12, },
+  },
+});
+const foto_slider_swiper = new Swiper('.foto_slider', {
+  loop: true,
+  loopPreventsSliding: false,
+  watchSlidesProgress: true,
+  centeredSlides: true,
+  spaceBetween: 24,
+  navigation: {
+    nextEl: ".foto_slider_on_main .btn_next",
+    prevEl: ".foto_slider_on_main .btn_prev"
+  }
 });
