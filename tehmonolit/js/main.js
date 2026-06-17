@@ -45,14 +45,28 @@ const autopark_swiper = new Swiper('.autopark_swiper', {
     1000: { spaceBetween: 24, }
   },
 });
+
 const foto_slider_swiper = new Swiper('.foto_slider', {
   loop: true,
-  loopPreventsSliding: false,
-  watchSlidesProgress: true,
-  centeredSlides: true,
+  centeredSlides: false,
+  slidesPerView: 1,
+  slidesPerGroup: 1,
   spaceBetween: 24,
   navigation: {
     nextEl: ".foto_slider_on_main .btn_next",
     prevEl: ".foto_slider_on_main .btn_prev"
-  }
+  },
+  pagination: {
+    el: ".foto_slider__pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    890: {
+      centeredSlides: true,
+    },
+  },
+});
+
+swiper.on('slideChangeTransitionEnd', () => {
+  swiper.pagination.update();
 });

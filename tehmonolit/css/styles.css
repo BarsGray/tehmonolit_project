@@ -674,6 +674,17 @@ footer .container .phone {
   opacity: 0;
 }
 
+.autopark_swiper_container {
+  max-width: calc(1464px + 52px);
+  padding: 0 26px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.autopark_swiper .swiper-scrollbar {
+  display: none;
+}
+
 .autopark_swiper .swiper-scrollbar-horizontal,
 .autopark_swiper .swiper-horizontal {
   width: 100%;
@@ -701,6 +712,7 @@ footer .container .phone {
 .advantages .title {
   font-size: 34px;
   margin-bottom: 40px;
+  line-height: 1.4;
 }
 
 .advantages_box {
@@ -754,6 +766,7 @@ footer .container .phone {
 
 .foto_slider_on_main {
   padding: 60px 0 120px;
+  position: relative;
 }
 
 .foto_slider.swiper {
@@ -828,7 +841,7 @@ footer .container .phone {
 .foto_slider_top_row .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+  gap: 24px;
 }
 
 .foto_slider_top_row .title {
@@ -855,6 +868,7 @@ footer .container .phone {
   width: fit-content;
   background-color: #fff;
   transition: all .3s ease-in-out;
+  height: fit-content;
 }
 
 .foto_slider_top_row .btn:hover {
@@ -862,9 +876,22 @@ footer .container .phone {
   color: #fff;
 }
 
+.foto_slider__pagination {
+  display: none;
+}
+
 @media (max-width: 1516px) {
   .img_bg {
     margin-top: calc(23vw - 800px);
+  }
+
+  /* .autopark_swiper_container {
+    max-width: 100%;
+    overflow: hidden;
+  } */
+
+  .autopark_swiper {
+    overflow: visible;
   }
 }
 
@@ -981,6 +1008,10 @@ footer .container .phone {
     font-size: 28px;
   }
 
+  .advantages .title {
+    font-size: 28px;
+  }
+
   .autopark_slider .param {
     font-size: 12px;
     padding: 5px 8px;
@@ -1006,6 +1037,61 @@ footer .container .phone {
 
   .autopark_slider .slider_item img {
     height: 170px;
+  }
+
+  .advantages_text {
+    font-size: 15px;
+  }
+
+  .advantages_title {
+    font-size: 20px
+  }
+
+  .foto_slider_top_row .text {
+    font-size: 17px;
+  }
+
+  .foto_slider_top_row .container {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 890px) {
+  .foto_slider_top_row .container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .foto_slider_on_main .btn_prev,
+  .foto_slider_on_main .btn_next {
+    display: none;
+  }
+
+  .foto_slider_top_row .btn {
+    position: absolute;
+    left: 50%;
+    bottom: 147px;
+    transform: translateX(-50%);
+    z-index: 999;
+  }
+
+  .foto_slider_top_row .text {
+    grid-column: unset;
+    grid-row: unset;
+    font-size: 16px;
+  }
+
+  .foto_slider_top_row .btn {
+    width: calc(100% - 52px);
+    text-align: center;
+  }
+
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 98px;
+  }
+
+  .foto_slider__pagination {
+    display: block;
   }
 }
 
@@ -1045,6 +1131,13 @@ footer .container .phone {
   .bunner .container {
     display: flex;
     flex-direction: column;
+  }
+
+  .advantages_box {
+    padding: 20px;
+    grid-gap: 32px;
+    grid-template-columns: 1fr;
+    border-radius: 20px;
   }
 }
 
@@ -1091,6 +1184,27 @@ footer .container .phone {
   header .phone span {
     display: none;
   }
+
+  .advantages_icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .advantages_title {
+    font-size: 17px;
+  }
+
+  .advantages_text {
+    font-style: 14px;
+  }
+
+  .foto_slider_top_row .title {
+    font-size: 20px;
+  }
+
+  .foto_slider_top_row {
+    padding-bottom: 0;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1111,6 +1225,18 @@ footer .container .phone {
     padding: 0 20px;
   }
 
+  .autopark_swiper_container {
+    padding: 0 20px;
+  }
+
+  .foto_slider {
+    padding: 0 20px;
+  }
+
+  .autopark_slider {
+    padding: 0 0 50px;
+  }
+
   .header_box {
     padding: 12px;
     border-radius: 28px;
@@ -1118,6 +1244,16 @@ footer .container .phone {
 
   .logo img {
     width: 166px;
+  }
+
+
+  .autopark_slider .title {
+    font-size: 20px;
+  }
+
+  .advantages .title {
+    font-size: 20px;
+    margin-bottom: 20px;
   }
 
   .autopark_slider .right_box {
@@ -1132,10 +1268,12 @@ footer .container .phone {
   .autopark_slider .param {
     font-size: 10px;
   }
+
   .autopark_slider .name {
     font-size: 17px;
     margin-bottom: 12px;
   }
+
   .autopark_slider .price {
     font-size: 20px;
   }
@@ -1146,6 +1284,18 @@ footer .container .phone {
 
   .autopark_slider .slider_item {
     width: 192px;
+  }
+
+  .autopark_slider .top_row {
+    margin-bottom: 20px;
+  }
+
+  .autopark_swiper .swiper-scrollbar {
+    display: block;
+  }
+
+  .advantages {
+    padding: 50px 0;
   }
 }
 
@@ -1198,12 +1348,28 @@ footer .container .phone {
     padding: 0 12px;
   }
 
+  .autopark_swiper_container {
+    padding: 0 12px;
+  }
+
+  .foto_slider {
+    padding: 0 12px;
+  }
+
   header {
     padding-top: 12px;
   }
 
   header .container {
     top: 12px;
+  }
+
+  .autopark_slider {
+    padding: 0 0 40px;
+  }
+
+  .advantages {
+    padding: 40px 0;
   }
 }
 
@@ -1221,12 +1387,26 @@ footer .container .phone {
   .bunner .text {
     width: 100%;
   }
+
   .header_box {
     padding: 8px;
     border-radius: 20px;
   }
+
   .bunner {
     padding: 10px 0 40px;
+  }
+
+  .autopark_slider .show_all {
+    font-size: 14px;
+  }
+
+  .autopark_slider .title {
+    font-size: 20px;
+  }
+
+  .advantages_box {
+    padding: 12px;
   }
 }
 
