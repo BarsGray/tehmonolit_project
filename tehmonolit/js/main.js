@@ -66,7 +66,3 @@ const foto_slider_swiper = new Swiper('.foto_slider', {
     },
   },
 });
-
-swiper.on('slideChangeTransitionEnd', () => {
-  swiper.pagination.update();
-});
