@@ -531,6 +531,7 @@ footer .container .phone {
   padding-right: 26px;
 }
 
+.avtopark_item .show_all::before,
 .autopark_slider .show_all::before {
   content: '';
   width: 22px;
@@ -1571,6 +1572,7 @@ footer .container .phone {
     padding: 10px 0 40px;
   }
 
+  .avtopark_item .show_all,
   .autopark_slider .show_all {
     font-size: 14px;
   }
