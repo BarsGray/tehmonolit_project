@@ -1212,6 +1212,14 @@ img.attachment-post-thumbnail {
   padding: 26px;
 }
 
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 24px;
+  padding-bottom: 80px;
+  position: relative;
+}
+
 @media (max-width: 1516px) {
   .img_bg {
     margin-top: calc(23vw - 800px);
