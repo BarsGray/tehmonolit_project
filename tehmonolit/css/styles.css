@@ -93,6 +93,10 @@ a {
 
 /* =========================== reset ====================================== */
 /* =========================== font ====================================== */
+.wrapper {
+  overflow-x: hidden;
+}
+
 @font-face {
   font-family: 'Unbounded';
   font-weight: 400;
@@ -200,7 +204,6 @@ body {
 .content_container {
   max-width: 968px;
   margin: 0 auto;
-  padding-bottom: 140px;
 }
 
 .header_box {
@@ -466,6 +469,7 @@ body {
 footer {
   padding: 40px 0 26px;
   background-color: #fff;
+  margin-top: 140px;
 }
 
 footer .container {
@@ -838,8 +842,15 @@ footer .container .phone {
 }
 
 .foto_slider_on_main {
-  padding: 60px 0 120px;
+  padding: 60px 0 0;
   position: relative;
+}
+
+.content .foto_slider_on_main {
+  width: 100vw;
+  left: 50%;
+  padding: 0;
+  transform: translateX(-50%);
 }
 
 .foto_slider.swiper {
@@ -992,11 +1003,18 @@ td {
   white-space: nowrap;
 }
 
+.table_params,
 .table_price {
   overflow: auto;
   padding-bottom: 40px;
 }
 
+.table_params {
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.table_params,
 .table_price {
   overflow-x: auto;
 
@@ -1006,20 +1024,24 @@ td {
 }
 
 /* Chrome, Edge, Safari */
+.table_params::-webkit-scrollbar,
 .table_price::-webkit-scrollbar {
   height: 8px;
 }
 
+.table_params::-webkit-scrollbar-track,
 .table_price::-webkit-scrollbar-track {
   background: #C7C7C7;
   border-radius: 999px;
 }
 
+.table_params::-webkit-scrollbar-thumb,
 .table_price::-webkit-scrollbar-thumb {
   background: #999;
   border-radius: 999px;
 }
 
+.table_params::-webkit-scrollbar-thumb:hover,
 .table_price::-webkit-scrollbar-thumb:hover {
   background: #777;
 }
@@ -1030,6 +1052,11 @@ td {
   line-height: 1.4;
   padding: 40px 0;
   border-bottom: 1px solid #C9C9C9;
+}
+
+.avtopark_item.single {
+  padding-top: 0;
+  border: 0;
 }
 
 .avtopark_item:first-child {
@@ -1093,6 +1120,96 @@ td {
 
 .contacts_row:last-child {
   margin-bottom: 0;
+}
+
+.content {
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.content p {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.content img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.content img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content ul {
+  list-style: none;
+  padding: 0;
+  padding-left: 25px;
+}
+
+.content ul li {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.content ul li::before {
+  content: "•";
+  position: absolute;
+  left: -16px;
+}
+
+.content img.alignright,
+.content img.alignleft,
+.content img.aligncenter {
+  display: block;
+  float: none;
+  margin: 0 auto 10px;
+  max-width: 100%;
+}
+
+.content img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto
+}
+
+img.attachment-post-thumbnail {
+  display: block;
+  margin: 0 auto 30px;
+}
+
+.content img.alignright {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+
+.content img.alignleft {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+
+.content img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content_img img {
+  border-radius: 24px;
+}
+
+.content_img {
+  width: 100vw;
+  max-width: 1464px;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
+  padding: 26px;
 }
 
 @media (max-width: 1516px) {
@@ -1306,6 +1423,14 @@ td {
   .title {
     font-size: 40px;
   }
+
+  .content p {
+    font-size: 17px;
+  }
+
+  .content_img img {
+    border-radius: 24px;
+  }
 }
 
 @media (max-width: 890px) {
@@ -1496,6 +1621,8 @@ td {
   .avtopark_item .param {
     margin-bottom: 8px;
   }
+
+
 }
 
 @media (max-width: 640px) {
@@ -1513,6 +1640,10 @@ td {
   }
 
   .container {
+    padding: 0 20px;
+  }
+
+  .content_img {
     padding: 0 20px;
   }
 
@@ -1601,6 +1732,10 @@ td {
     border-radius: 12px;
   }
 
+  .content_img img {
+    border-radius: 12px;
+  }
+
   .avtopark_item {
     padding: 20px 0;
   }
@@ -1615,10 +1750,6 @@ td {
     font-size: 14px;
     padding: 12px 8px;
     padding-right: 30px;
-  }
-
-  .content_container {
-    padding-bottom: 120px;
   }
 
   .contacts_row .label {
@@ -1637,6 +1768,14 @@ td {
     border-radius: 12px;
     width: 34px;
     height: 34px;
+  }
+
+  .content p {
+    font-size: 16px;
+  }
+
+  footer {
+    margin-top: 120px;
   }
 }
 
@@ -1699,6 +1838,10 @@ td {
 
   .container {
     padding: 0 12px;
+  }
+
+  .content_img {
+    padding: 12px;
   }
 
   .autopark_swiper_container {
