@@ -306,6 +306,7 @@ body {
   flex-direction: column;
   gap: 20px;
   padding-left: 40px;
+  min-height: 120px;
 }
 
 .bunner_call_btn,
@@ -1441,6 +1442,7 @@ img.attachment-post-thumbnail {
     padding-left: 0;
     margin-top: 12px;
     order: 1;
+    min-height: 0;
   }
 
   .bunner_call_btn,

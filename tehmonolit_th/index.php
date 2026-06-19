@@ -8,8 +8,12 @@
         честная цена за смену.</p>
     </div>
     <div class="buttons">
-      <a class="bunner_call_btn" href="/"><span>Позвонить</span></a>
-      <a class="bunner_max_btn" href="/"><span>Написать в MAX</span></a>
+      <?php if (get_field('number_1', FRONT_PAGE)): ?>
+        <a class="bunner_call_btn" href="tel:<?php echo merge_numbers(get_field('number_1', FRONT_PAGE));?>"><span>Позвонить</span></a>
+      <?php endif; ?>
+      <?php if (get_field('max', FRONT_PAGE)): ?>
+        <a class="bunner_max_btn" href="<?php the_field('max', FRONT_PAGE); ?>"><span>Написать в MAX</span></a>
+      <?php endif; ?>
     </div>
     <div class="img_bg"></div>
   </div>
@@ -147,11 +151,11 @@
   <div class="foto_slider_container">
     <div class="foto_slider swiper">
       <div class="foto_slider_row swiper-wrapper">
-        <div class="foto_slider_item swiper-slide"><a href="img/gellary_1.jpg" data-fancybox="gallery" data-caption="Single image"><img src="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" alt=""></a></div>
-        <div class="foto_slider_item swiper-slide"><a href="img/gellary_1.jpg" data-fancybox="gallery" data-caption="Single image"><img src="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" alt=""></a></div>
-        <div class="foto_slider_item swiper-slide"><a href="img/gellary_1.jpg" data-fancybox="gallery" data-caption="Single image"><img src="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" alt=""></a></div>
-        <div class="foto_slider_item swiper-slide"><a href="img/gellary_1.jpg" data-fancybox="gallery" data-caption="Single image"><img src="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" alt=""></a></div>
-        <div class="foto_slider_item swiper-slide"><a href="img/gellary_1.jpg" data-fancybox="gallery" data-caption="Single image"><img src="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" alt=""></a></div>
+        <div class="foto_slider_item swiper-slide"><a href="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" data-fancybox="gallery" data-caption="Single image"><img src="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" alt=""></a></div>
+        <div class="foto_slider_item swiper-slide"><a href="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" data-fancybox="gallery" data-caption="Single image"><img src="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" alt=""></a></div>
+        <div class="foto_slider_item swiper-slide"><a href="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" data-fancybox="gallery" data-caption="Single image"><img src="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" alt=""></a></div>
+        <div class="foto_slider_item swiper-slide"><a href="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" data-fancybox="gallery" data-caption="Single image"><img src="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" alt=""></a></div>
+        <div class="foto_slider_item swiper-slide"><a href="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" data-fancybox="gallery" data-caption="Single image"><img src="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" alt=""></a></div>
       </div>
     </div>
     <div class="swiper-pagination foto_slider__pagination"></div>
