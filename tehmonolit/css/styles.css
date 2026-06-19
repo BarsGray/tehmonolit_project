@@ -206,6 +206,9 @@ body {
   margin: 0 auto;
 }
 
+.swiper-pagination-bullet {transition: all .3s ease-in-out, background-color .3s ease-in-out .1s}
+.swiper-pagination-bullet-active {background-color: #FFCF30; width: 24px; border-radius: 20px; transition: all .3s ease-in-out}
+
 .header_box {
   border-radius: 32px;
   background-color: #fff;
@@ -308,21 +311,10 @@ body {
   stroke-linecap: round;
 }
 
-.ham7.active .line {
-  stroke: #fff;
-}
-
-.ham7 .top {
-  stroke-dasharray: 26 82;
-}
-
-.ham7 .middle {
-  stroke-dasharray: 40 111;
-}
-
-.ham7 .bottom {
-  stroke-dasharray: 27 161;
-}
+.ham7.active .line {stroke: #fff;}
+.ham7 .top {stroke-dasharray: 26 82;}
+.ham7 .middle {stroke-dasharray: 40 111;}
+.ham7 .bottom {stroke-dasharray: 27 161;}
 
 .ham7.active .top {
   stroke-dasharray: 37 82;
@@ -330,9 +322,7 @@ body {
   d: path("m 70 33 h -40 c 0 0 -6 1.3688 -6 8.5 c 0 7.1312 6 8.5013 6 8.5013 l 20 -0.0013");
 }
 
-.ham7.active .middle {
-  stroke-dashoffset: 23px;
-}
+.ham7.active .middle {stroke-dashoffset: 23px;}
 
 .ham7.active .bottom {
   stroke-dasharray: 40 161;
@@ -354,18 +344,9 @@ body {
 }
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
-.bunner {
-  padding: 60px 0 80px;
-}
-
-.bunner .container {
-  position: relative;
-}
-
-.bunner .text_box {
-  min-height: 199px;
-}
+.bunner {padding: 60px 0 80px;}
+.bunner .container {position: relative;}
+.bunner .text_box {min-height: 199px;}
 
 .img_bg {
   position: relative;
@@ -798,14 +779,8 @@ footer .container .phone {
   left: 0;
   height: 6px;
 }
-
-.autopark_swiper .swiper-scrollbar {
-  background-color: #DBDBDB;
-}
-
-.autopark_swiper .swiper-scrollbar-drag {
-  background-color: #FFCF30;
-}
+.autopark_swiper .swiper-scrollbar {background-color: #DBDBDB;}
+.autopark_swiper .swiper-scrollbar-drag {background-color: #FFCF30;}
 
 .advantages {
   padding: 60px 0;
@@ -846,30 +821,12 @@ footer .container .phone {
   color: #767676;
   font-size: 16px;
 }
-
-.advantages_icon_1 {
-  background: url('../img/icon-5.svg') no-repeat center / contain;
-}
-
-.advantages_icon_2 {
-  background: url('../img/icon-3.svg') no-repeat center / contain;
-}
-
-.advantages_icon_3 {
-  background: url('../img/icon-3.svg') no-repeat center / contain;
-}
-
-.advantages_icon_4 {
-  background: url('../img/icon-2.svg') no-repeat center / contain;
-}
-
-.advantages_icon_5 {
-  background: url('../img/icon-1.svg') no-repeat center / contain;
-}
-
-.advantages_icon_6 {
-  background: url('../img/icon.svg') no-repeat center / contain;
-}
+.advantages_icon_1 {background: url('../img/icon-5.svg') no-repeat center / contain;}
+.advantages_icon_2 {background: url('../img/icon-3.svg') no-repeat center / contain;}
+.advantages_icon_3 {background: url('../img/icon-3.svg') no-repeat center / contain;}
+.advantages_icon_4 {background: url('../img/icon-2.svg') no-repeat center / contain;}
+.advantages_icon_5 {background: url('../img/icon-1.svg') no-repeat center / contain;}
+.advantages_icon_6 {background: url('../img/icon.svg') no-repeat center / contain;}
 
 .foto_slider_on_main {
   padding: 60px 0 0;
@@ -1543,7 +1500,7 @@ img.attachment-post-thumbnail {
   }
 
   .foto_slider_top_row .btn {
-    bottom: 121px;
+    bottom: 6px;
   }
 }
 
