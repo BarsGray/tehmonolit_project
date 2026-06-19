@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+
+<head>
+  <meta charset="<?php bloginfo('charset'); ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><?php bloginfo('name'); ?></title>
+  <?php wp_head(); ?>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="header_box">
+          <a class="logo" href="/"><img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="Логотип"></a>
+          <div class="menu_wrap">
+            <?php wp_nav_menu('menu=top_menu&container=nav&container_class=menu');?>
+            <a class="social_link menu_max" href="/"></a>
+          </div>
+          <div class="header_contacts">
+            <a class="social_link max" href="/"></a>
+            <a class="phone" href="tel:+79202291343">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3 5.29536C3 4.02755 4.02776 3.00001 5.29536 3H7.50403C8.47711 3.00008 9.35232 3.59248 9.71371 4.49597L10.5605 6.6119C10.8854 7.42416 10.7376 8.34914 10.1784 9.02016L9.72278 9.56653C9.44832 9.89634 9.47069 10.382 9.7752 10.6865L11.3135 12.2258C11.6174 12.5297 12.1029 12.5516 12.4335 12.2762L12.9798 11.8206C13.6514 11.2609 14.5757 11.1151 15.3871 11.4395L17.504 12.2863L17.6694 12.3599C18.4791 12.7573 19 13.5836 19 14.496V16.7046L18.9879 16.9395C18.8703 18.0967 17.8931 18.9999 16.7046 19C9.13601 19 3.00006 12.8641 3 5.29536ZM4.54839 5.29536C4.54845 12.009 9.99119 17.4516 16.7046 17.4516C17.1169 17.4515 17.4516 17.1173 17.4516 16.7046V14.496C17.4516 14.156 17.2449 13.8502 16.9294 13.7238L14.8125 12.877C14.5289 12.7636 14.2062 12.8149 13.9718 13.0101L13.4254 13.4657C12.5391 14.2043 11.2607 14.1961 10.3871 13.4748L10.2177 13.3206L8.67944 11.7812C7.80976 10.9114 7.74484 9.52073 8.53327 8.5746L8.98891 8.02823C9.16022 7.82257 9.22146 7.54983 9.15827 7.29536L9.12298 7.1875L8.27621 5.07157C8.14996 4.75593 7.84394 4.54847 7.50403 4.54839H5.29536C4.88273 4.54839 4.54839 4.88288 4.54839 5.29536Z"
+                  fill="#282828" />
+              </svg>
+              <span>+7 920 229 13 43</span>
+            </a>
+            <a class="burger_menu_btn">
+              <svg class="ham hamRotate ham7" viewBox="0 0 100 100" width="40">
+                <path class="line top"
+                  d="m 63,33 h -40 c 0,0 -6,1.368796 -6,8.5 0,7.131204 6,8.5013 6,8.5013 l 20,-0.0013" />
+                <path class="line middle" d="m 70,50 h -40" />
+                <path class="line bottom"
+                  d="m 63.575405,67.073826 h -40 c -5.592752,0 -6.873604,-9.348582 1.371031,-9.348582 8.244634,0 19.053564,21.797129 19.053564,12.274756 l 0,-40" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
