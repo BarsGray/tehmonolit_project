@@ -5,17 +5,8 @@
     <div class="content">
       <?php the_content(); ?>
     </div>
-    <?php 
-    if(is_page(20))
-      show_contacts();
-
-    if(is_page(17))
-      show_gallery();
-    ?>
+    <?php if(is_page(20)) show_contacts(); ?>
   </div>
-  <?php
-    if(is_page(17))
-      show_gallery();
-  ?>
+  <?php if(is_page(17)) show_gallery(); ?>
 </div>
 <?php get_footer(); ?>
