@@ -82,3 +82,13 @@ function show_contacts() {
     </div>
   <?php endif; ?>
 <?php }
+
+function show_gallery() {
+	if (get_field('foto_gallery')): ?>
+    <div class="gallery">
+      <?php foreach(get_field('foto_gallery') as $item): ?>
+        <div class="gallery_item gallery_item_visible"><a data-fancybox="gallery" href="<?php echo $item['url']; ?>"><img src="<?php echo $item['url']; ?>" alt="<?php echo $item['alt']; ?>"></a></div>
+      <?php endforeach; ?>
+    </div>
+<?php endif;
+}
