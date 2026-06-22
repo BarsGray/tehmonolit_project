@@ -138,29 +138,5 @@
     </div>
   </div>
 </div>
-<div class="foto_slider_on_main">
-  <div class="foto_slider_top_row">
-    <div class="container">
-      <p class="title">Бетонируем сложные объекты профессионально</p>
-      <a href="#" class="btn">Фотогалерея</a>
-      <p class="text">Приезжаем в назначенное время. Заливаем без потери качества. Убираем за собой. Наши операторы
-        управляют бетононасосом и следят за каждым этапом — от развертки стрелы до промывки после смены. Техника
-        проходит ТО перед каждым выездом. Вы получаете кубометры, а не головную боль.</p>
-    </div>
-  </div>
-  <div class="foto_slider_container">
-    <div class="foto_slider swiper">
-      <div class="foto_slider_row swiper-wrapper">
-        <div class="foto_slider_item swiper-slide"><a href="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" data-fancybox="gallery" data-caption="Single image"><img src="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" alt=""></a></div>
-        <div class="foto_slider_item swiper-slide"><a href="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" data-fancybox="gallery" data-caption="Single image"><img src="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" alt=""></a></div>
-        <div class="foto_slider_item swiper-slide"><a href="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" data-fancybox="gallery" data-caption="Single image"><img src="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" alt=""></a></div>
-        <div class="foto_slider_item swiper-slide"><a href="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" data-fancybox="gallery" data-caption="Single image"><img src="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" alt=""></a></div>
-        <div class="foto_slider_item swiper-slide"><a href="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" data-fancybox="gallery" data-caption="Single image"><img src="<?php bloginfo('template_url'); ?>/img/gellary_1.jpg" alt=""></a></div>
-      </div>
-    </div>
-    <div class="swiper-pagination foto_slider__pagination"></div>
-    <a href="#" class="btn_prev"></a>
-    <a href="#" class="btn_next"></a>
-  </div>
-</div>
+<?php echo show_foto_slider(); ?>
 <?php get_footer(); ?>

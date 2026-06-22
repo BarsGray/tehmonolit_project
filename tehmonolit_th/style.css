@@ -214,6 +214,22 @@ body {
   margin: 0 auto;
 }
 
+h1, .h1, .content h1, .content .h1,
+h2, .h2, .content h2, .content .h2,
+h3, .h3, .content h3, .content .h3,
+h4, .h4, .content h4, .content .h4,
+h5, .h5, .content h5, .content .h5,
+h6, .h6, .content h6, .content .h6 {
+	font-weight: 400;
+	margin-bottom: 40px;
+}
+h1, .h1, .content h1, .content .h1 {font-size: 45px;}
+h2, .h2, .content h2, .content .h2 {font-size: 40px;}
+h3, .h3, .content h3, .content .h3 {font-size: 38px;}
+h3, .h3, .content h4, .content .h4  {font-size: 36px;}
+h4, .h4, .content h5, .content .h5  {font-size: 34px;}
+h5, .h5, .content h6, .content .h6  {font-size: 32px;}
+
 .swiper-pagination-bullet {
   transition: all .3s ease-in-out, background-color .3s ease-in-out .1s
 }
@@ -976,6 +992,8 @@ footer .container .phone {
 .foto_slider a,
 .foto_slider {
   max-height: 620px;
+  height: 100%;
+  aspect-ratio: 21/9;
 }
 
 .foto_slider_item {
@@ -983,9 +1001,11 @@ footer .container .phone {
   overflow: hidden;
 }
 
+.content .foto_slider_item img,
 .foto_slider_item img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .foto_slider_on_main .btn_prev,
