@@ -11,7 +11,9 @@ if (!defined('SVG_MENU_BTN')) {define('SVG_MENU_BTN', '<svg class="ham hamRotate
 
 
 add_theme_support('post-thumbnails');
-
+add_image_size( 'custom-gallery-thumb_10_7', 1024, 720, true );
+add_image_size( 'custom-gallery-thumb_5_3', 500, 300, true );
+add_image_size( 'custom-gallery-thumb_35_30', 350, 300, true );
 register_nav_menus();
 
 add_action('wp_enqueue_scripts', 'tehmonolit_th_scripts_style');
@@ -55,34 +57,34 @@ function merge_numbers($num)
 	return str_replace([' ', '-', '(', ')'], '', $num);
 }
 
-// function register_orion_services()
-// {
+function register_avtopark()
+{
 
-// 	$post_labels = array(
-// 		'name' => 'Услуги',
-// 		'singular_name' => 'Услуга',
-// 		'add_new' => 'Добавить новую',
-// 		'add_new_item' => 'Добавить новую услугу',
-// 		'edit_item' => 'Редактировать услугу',
-// 		'menu_name' => 'Услуги'
-// 	);
+	$post_labels = array(
+		'name' => 'Автопарк',
+		'singular_name' => 'Услуга',
+		'add_new' => 'Добавить новую',
+		'add_new_item' => 'Добавить новую услугу',
+		'edit_item' => 'Редактировать услугу',
+		'menu_name' => 'Автопарк'
+	);
 
-// 	$post_args = array(
-// 		'labels' => $post_labels,
-// 		'public' => true,
-// 		'has_archive' => 'services',
-// 		'menu_position' => 5,
-// 		'menu_icon' => 'dashicons-hammer',
-// 		'supports' => array('title', 'editor', 'thumbnail'),
-// 		'rewrite' => array('slug' => 'services'),
-// 		'show_in_rest' => true,
-// 		'capability_type' => 'post',
-// 	);
+	$post_args = array(
+		'labels' => $post_labels,
+		'public' => true,
+		'has_archive' => 'services',
+		'menu_position' => 5,
+		'menu_icon' => 'dashicons-admin-network',
+		'supports' => array('title', 'editor', 'thumbnail'),
+		'rewrite' => array('slug' => 'services'),
+		'show_in_rest' => true,
+		'capability_type' => 'post',
+	);
 
-// 	register_post_type('or_service', $post_args);
-// }
+	register_post_type('service', $post_args);
+}
 
-// add_action('init', 'register_orion_services');
+add_action('init', 'register_avtopark');
 
 function wide_image_shortcode($attr, $content = null) {return '<div class="content_img">' . do_shortcode(trim((string) $content)) . '</div>';}
 add_shortcode('wide_img', 'wide_image_shortcode');

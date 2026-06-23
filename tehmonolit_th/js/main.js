@@ -28,6 +28,18 @@ function openMenu() {
 menuButton.addEventListener('click', openMenu);
 overlay.addEventListener('click', openMenu);
 
+let isExecuted = false;
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 1320) {
+    if (!isExecuted && headerMenu.classList.contains('active')) {
+      openMenu();
+      isExecuted = true;
+    }
+  } else {
+    isExecuted = false;
+  }
+});
+
 // ======================= swiper =============
 const autopark_swiper = new Swiper('.autopark_swiper', {
   slidesPerView: 'auto',
@@ -81,3 +93,50 @@ Fancybox.bind('[data-fancybox="gallery"]', {
     },
   },
 });
+
+// ======================= loadMore gallery =============
+const gallery = document.querySelector('.gallery');
+const gallery_item = document.querySelectorAll('.gallery_item');
+const galleryBtn = document.querySelector('.gallery_btn');
+
+let servicesItemsPreviose = 12;
+let iShow = servicesItemsPreviose;
+
+if (!gallery_item.length == 0) {
+
+  function galleryBtnHidden() {
+    galleryBtn.style.display = 'none';
+    gallery.style.paddingBottom = 0;
+  }
+
+  if (gallery_item.length <= servicesItemsPreviose) {
+    galleryBtnHidden();
+  }
+
+  function galleryCounter() {
+    for (let i = 0; i < iShow && i < gallery_item.length; i++) {
+      gallery_item[i].style.display = 'block';
+      setTimeout(() => { gallery_item[i].classList.add('gallery_item_visible'); }, 10);
+    }
+  }
+
+  galleryCounter();
+
+  galleryBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    if (iShow === gallery_item.length) {
+      return;
+    } else if (iShow + servicesItemsPreviose > gallery_item.length) {
+      iShow += gallery_item.length - iShow;
+      galleryBtnHidden();
+    } else {
+      iShow += servicesItemsPreviose;
+      if (iShow >= gallery_item.length) {
+        galleryBtnHidden();
+      }
+    }
+
+    galleryCounter();
+  });
+}

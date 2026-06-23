@@ -5,7 +5,10 @@
     <div class="content">
       <?php the_content(); ?>
     </div>
-    <?php if(is_page(20)) show_contacts(); ?>
+    <?php
+    if(is_page(11)) show_avtopark();
+    if(is_page(20)) show_contacts();
+    ?>
   </div>
   <?php if(is_page(17)) show_gallery(); ?>
 </div>

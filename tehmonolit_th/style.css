@@ -673,6 +673,7 @@ footer .container .phone {
   font-size: 24px;
 }
 
+.gallery_btn,
 .avtopark_item .btn,
 .autopark_slider .btn {
   font-size: 16px;
@@ -685,6 +686,7 @@ footer .container .phone {
   transition: all .3s ease-in-out;
 }
 
+.gallery_btn:hover,
 .avtopark_item .btn:hover,
 .autopark_slider .btn:hover {
   background-color: #282828;
@@ -993,7 +995,7 @@ footer .container .phone {
 .foto_slider {
   max-height: 620px;
   height: 100%;
-  aspect-ratio: 21/9;
+  aspect-ratio: 21/8;
 }
 
 .foto_slider_item {
@@ -1006,6 +1008,7 @@ footer .container .phone {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: bottom;
 }
 
 .foto_slider_on_main .btn_prev,
@@ -1394,12 +1397,20 @@ img.attachment-post-thumbnail {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 24px;
-  padding-bottom: 80px;
+  padding-bottom: 88px;
   position: relative;
 }
 .gallery_item {
   border-radius: 16px;
   overflow: hidden;
+  transition: all .3s ease-in-out;
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+.gallery_item_visible {
+  visibility: visible;
+  opacity: 1;
 }
 .gallery_item a {
   display: block;
@@ -1411,6 +1422,14 @@ img.attachment-post-thumbnail {
   height: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
+}
+.gallery_btn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  grid-column: 1/-1;
+  line-height: 1.4;
 }
 
 @media (max-width: 1516px) {
@@ -1556,6 +1575,7 @@ img.attachment-post-thumbnail {
     font-size: 20px;
   }
 
+  .gallery_btn,
   .avtopark_item .btn,
   .autopark_slider .btn {
     font-size: 14px;
@@ -1563,6 +1583,7 @@ img.attachment-post-thumbnail {
     border-radius: 12px;
   }
 
+  .gallery_btn,
   .avtopark_item .btn {
     border-radius: 16px;
     padding: 11px 22px;

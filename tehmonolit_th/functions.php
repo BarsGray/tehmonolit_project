@@ -11,8 +11,11 @@ function show_foto_slider() {
   $slides = '';
 
 	if (get_field('foto_gallery', 17)){
+    $count = 0;
     foreach(get_field('foto_gallery', 17) as $item) {
+      if ($count >= 10) break;
       $slides .= "<div class='foto_slider_item swiper-slide'><a href='".$item['url']."' data-fancybox='gallery'><img src='".$item['url']."' alt='".$item['alt']."'></a></div>";
+      $count++;
     }
   }
 
@@ -87,8 +90,63 @@ function show_gallery() {
 	if (get_field('foto_gallery')): ?>
     <div class="gallery">
       <?php foreach(get_field('foto_gallery') as $item): ?>
-        <div class="gallery_item gallery_item_visible"><a data-fancybox="gallery" href="<?php echo $item['url']; ?>"><img src="<?php echo $item['url']; ?>" alt="<?php echo $item['alt']; ?>"></a></div>
+        <div class="gallery_item"><a data-fancybox="gallery" href="<?php echo $item['url']; ?>"><img src="<?php echo $item['sizes']['custom-gallery-thumb_5_3']; ?>" alt="<?php echo $item['alt']; ?>"></a></div>
       <?php endforeach; ?>
+      <a href="#" class="gallery_btn">Загрузить ещё</a>
     </div>
 <?php endif;
+}
+
+function show_avtopark() { ?>
+  <div class="avtopark_section">
+    <div class="avtopark_item">
+      <div class="img">
+        <a href="#"><img src="<?php echo TEMPLATE_URL; ?>/img/slider_item.jpg" alt=""></a>
+      </div>
+      <div class="info">
+        <div class="info_top">
+          <p class="param">Вертикальный вылет - 24 м.</p>
+          <a href=# class="name">Мерседес АТЕГО Schwing-24</p></a>
+        </div>
+        <div class="info_bottom">
+          <p class="price">3 000 ₽ / час</p>
+          <a href="" class="btn">Заказать</a>
+          <a class="show_all" href="#">Смотреть всё</a>
+        </div>
+      </div>
+    </div>
+    <div class="avtopark_item">
+      <div class="img">
+        <a href="#"><img src="<?php echo TEMPLATE_URL; ?>/img/4. Скания CIFA 31 с бетономиксером 9 куб.м.jpg" alt=""></a>
+      </div>
+      <div class="info">
+        <div class="info_top">
+          <p class="param">Вертикальный вылет - 24 м.</p>
+          <a href=# class="name">Мерседес АТЕГО Schwing-24</p></a>
+        </div>
+        <div class="info_bottom">
+          <p class="price">3 000 ₽ / час</p>
+          <a href="" class="btn">Заказать</a>
+          <a class="show_all" href="#">Смотреть всё</a>
+        </div>
+      </div>
+    </div>
+    <div class="avtopark_item">
+      <div class="img">
+        <a href="#"><img src="<?php echo TEMPLATE_URL; ?>/img/3. Мерседес АКТРАС Putzmeister-28.jpg" alt=""></a>
+      </div>
+      <div class="info">
+        <div class="info_top">
+          <p class="param">Вертикальный вылет - 24 м.</p>
+          <a href=# class="name">Мерседес АТЕГО Schwing-24</p></a>
+        </div>
+        <div class="info_bottom">
+          <p class="price">3 000 ₽ / час</p>
+          <a href="" class="btn">Заказать</a>
+          <a class="show_all" href="#">Смотреть всё</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php
 }
