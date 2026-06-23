@@ -83,7 +83,6 @@ function register_avtopark()
 
 	register_post_type('service', $post_args);
 }
-
 add_action('init', 'register_avtopark');
 
 function wide_image_shortcode($attr, $content = null) {return '<div class="content_img">' . do_shortcode(trim((string) $content)) . '</div>';}
@@ -92,6 +91,7 @@ add_shortcode('wide_img', 'wide_image_shortcode');
 function foto_gallery_shortcode($attr) {return show_foto_slider();}
 add_shortcode('foto_gallery', 'foto_gallery_shortcode');
 
+// ===================== Памятка по шорткодам =====================
 function wide_img_admin_hint($post) {
 	if (in_array($post->post_type, array('post', 'page'))) {
 		?>
