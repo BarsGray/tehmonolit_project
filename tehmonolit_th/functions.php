@@ -97,11 +97,43 @@ function show_gallery() {
 <?php endif;
 }
 
+
+
+
+
 function show_avtopark() { ?>
-  <div class="avtopark_section">
-    <div class="avtopark_item">
+  <?php
+  $query = new WP_Query([
+		'post_type' => 'service',
+		'posts_per_page' => 10,
+		'paged' => (get_query_var('paged')) ? get_query_var('paged') : ((get_query_var('page')) ? get_query_var('page') : 1)
+	]);
+	if ($query->have_posts()):
+  ?>
+    <div class="avtopark_section">
+      <?php while ($query->have_posts()): $query->the_post();
+        $link = get_permalink(); ?>
+        <div class="avtopark_item">
+          <div class="img"><a href="<?php echo $link; ?>"><?php the_post_thumbnail(); ?></a></div>
+          <div class="info">
+            <div class="info_top">
+              <p class="param">Вертикальный вылет - <?php the_field('vilet'); ?>.</p>
+              <a href="<?php echo $link; ?>" class="name"><?php the_title(); ?></p></a>
+            </div>
+            <div class="info_bottom">
+              <p class="price"><?php the_field('price'); ?></p>
+              <a href="#" class="btn">Заказать</a>
+              <a class="show_all" href="#">Смотреть всё</a>
+            </div>
+          </div>
+        </div>
+      <?php endwhile; ?>
+    </div>
+	<?php endif; ?>
+
+    <!-- <div class="avtopark_item">
       <div class="img">
-        <a href="#"><img src="<?php echo TEMPLATE_URL; ?>/img/slider_item.jpg" alt=""></a>
+        <a href="#"><img src="<?php // echo TEMPLATE_URL; ?>/img/4. Скания CIFA 31 с бетономиксером 9 куб.м.jpg" alt=""></a>
       </div>
       <div class="info">
         <div class="info_top">
@@ -117,7 +149,7 @@ function show_avtopark() { ?>
     </div>
     <div class="avtopark_item">
       <div class="img">
-        <a href="#"><img src="<?php echo TEMPLATE_URL; ?>/img/4. Скания CIFA 31 с бетономиксером 9 куб.м.jpg" alt=""></a>
+        <a href="#"><img src="<?php // echo TEMPLATE_URL; ?>/img/3. Мерседес АКТРАС Putzmeister-28.jpg" alt=""></a>
       </div>
       <div class="info">
         <div class="info_top">
@@ -130,23 +162,6 @@ function show_avtopark() { ?>
           <a class="show_all" href="#">Смотреть всё</a>
         </div>
       </div>
-    </div>
-    <div class="avtopark_item">
-      <div class="img">
-        <a href="#"><img src="<?php echo TEMPLATE_URL; ?>/img/3. Мерседес АКТРАС Putzmeister-28.jpg" alt=""></a>
-      </div>
-      <div class="info">
-        <div class="info_top">
-          <p class="param">Вертикальный вылет - 24 м.</p>
-          <a href=# class="name">Мерседес АТЕГО Schwing-24</p></a>
-        </div>
-        <div class="info_bottom">
-          <p class="price">3 000 ₽ / час</p>
-          <a href="" class="btn">Заказать</a>
-          <a class="show_all" href="#">Смотреть всё</a>
-        </div>
-      </div>
-    </div>
-  </div>
+    </div> -->
   <?php
 }
