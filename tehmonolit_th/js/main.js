@@ -79,6 +79,18 @@ const foto_slider_swiper = new Swiper('.foto_slider', {
 });
 
 // ======================= fancybox =============
+Fancybox.bind('[data-fancybox]', {
+  dragToClose: false,
+  Carousel: {
+    Toolbar: {
+      display: {
+        left: [],
+        middle: [],
+        right: ['fullscreen','close'],
+      },
+    },
+  },
+});
 Fancybox.bind('[data-fancybox="gallery"]', {
   dragToClose: false,
   animated: false,

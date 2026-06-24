@@ -1,15 +1,20 @@
 <?php
 function show_title_box() { ?>
   <div class="content_container">
-    <?php breadcrumbs(); ?>
-    <p class="title"><?php the_title(); ?></p>
+    <?php breadcrumbs();
+      $title = '';
+      if(is_404()) {
+        $title = 'Ошибка 404!';
+      } else {
+        $title = (get_field('alt_zag')) ? get_field('alt_zag') : get_the_title();
+      }
+      if(!is_singular('service')) { ?><h1 class="title"><?php echo $title; } ?></h1>
   </div>
 <?php };
 
 function show_foto_slider() {
   $foto_slider_title = '';
   $slides = '';
-
 	if (get_field('foto_gallery', 17)){
     $count = 0;
     foreach(get_field('foto_gallery', 17) as $item) {
@@ -18,7 +23,6 @@ function show_foto_slider() {
       $count++;
     }
   }
-
   if(is_front_page()){
     $foto_slider_title = <<<FOTO_SLIDER_TITLE
     <div class="foto_slider_top_row">
@@ -32,7 +36,6 @@ function show_foto_slider() {
     </div>
     FOTO_SLIDER_TITLE;
   }
-
   return <<<FOTO_SLIDER
   <div class="foto_slider_on_main">
     $foto_slider_title
@@ -87,9 +90,10 @@ function show_contacts() {
 <?php }
 
 function show_gallery() {
-	if (get_field('foto_gallery')): ?>
+  $foto_gallery = get_field('foto_gallery');
+	if ($foto_gallery): ?>
     <div class="gallery">
-      <?php foreach(get_field('foto_gallery') as $item): ?>
+      <?php foreach($foto_gallery as $item): ?>
         <div class="gallery_item"><a data-fancybox="gallery" href="<?php echo $item['url']; ?>"><img src="<?php echo $item['sizes']['custom-gallery-thumb_5_3']; ?>" alt="<?php echo $item['alt']; ?>"></a></div>
       <?php endforeach; ?>
       <a href="#" class="gallery_btn">Загрузить ещё</a>
@@ -97,71 +101,68 @@ function show_gallery() {
 <?php endif;
 }
 
+function show_avtopark_item ($value = '') {
+  $isSingle       = $value === 'single';
+  $isSlider       = $value === 'slider';
+  $link           = (!$isSingle) ? get_permalink() : '';
+  $link_img       = ($isSingle) ? get_the_post_thumbnail_url(get_the_ID(), 'full') : '';
+  $avtopark_calss = ($isSlider) ? 'slider_item swiper-slide' : 'avtopark_item' . ($isSingle ? ' single' : '');
+  ?>
+  <div class="<?php echo $avtopark_calss; ?>">
+    <div class="img"><a <?php echo ($isSingle) ? 'data-fancybox':''; ?> href="<?php echo (!$isSingle) ? $link : $link_img; ?>"><?php the_post_thumbnail(); ?></a></div>
+    <div class="info">
+      <div class="info_top">
+        <p class="param">Вертикальный вылет - <?php the_field('vilet'); ?>.</p>
+        <a <?php echo ($link ==! '') ? "href='$link'" : ''; ?> class="name"><?php the_title(); ?></a>
+      </div>
+      <div class="info_bottom">
+        <p class="price"><?php the_field('price'); ?></p>
+        <a href="#" class="btn">Заказать</a>
+        <?php if(!$isSlider):?><a class="show_all" href="#">Смотреть всё</a><?php endif; ?>
+      </div>
+    </div>
+  </div>
+<?php }
 
-
-
+function show_avtopark_slider($transport = '') {
+  $query = new WP_Query(['post_type' => 'service','posts_per_page' => -1,]);
+  if ($query->have_posts()): ?>
+  <div class="autopark_slider <?php echo $transport; ?>">
+    <div class="container">
+      <div class="top_row">
+        <div class="left_box">
+          <p class="title">Автопарк</p>
+          <a class="show_all" href="#">Смотреть всё</a>
+        </div>
+        <div class="right_box">
+          <a class="btn_prev" href="#"><span class="avtive"></span><span class="hover"></span><span class="unavtive"></span></a>
+          <a class="btn_next" href="#"><span class="avtive"></span><span class="hover"></span><span class="unavtive"></span></a>
+        </div>
+      </div>
+    </div>
+    <div class="autopark_swiper_container">
+      <div class="autopark_swiper swiper">
+        <div class="slider_row swiper-wrapper">
+          <?php while ($query->have_posts()): $query->the_post();
+            show_avtopark_item('slider'); ?>
+          <?php endwhile; ?>
+        </div>
+        <div class="swiper-scrollbar"></div>
+      </div>
+    </div>
+  </div>
+	<?php wp_reset_postdata(); endif;
+}
 
 function show_avtopark() { ?>
   <?php
-  $query = new WP_Query([
-		'post_type' => 'service',
-		'posts_per_page' => 10,
-		'paged' => (get_query_var('paged')) ? get_query_var('paged') : ((get_query_var('page')) ? get_query_var('page') : 1)
-	]);
-	if ($query->have_posts()):
-  ?>
+  $query = new WP_Query(['post_type' => 'service','posts_per_page' => -1,]);
+	if ($query->have_posts()): ?>
     <div class="avtopark_section">
       <?php while ($query->have_posts()): $query->the_post();
-        $link = get_permalink(); ?>
-        <div class="avtopark_item">
-          <div class="img"><a href="<?php echo $link; ?>"><?php the_post_thumbnail(); ?></a></div>
-          <div class="info">
-            <div class="info_top">
-              <p class="param">Вертикальный вылет - <?php the_field('vilet'); ?>.</p>
-              <a href="<?php echo $link; ?>" class="name"><?php the_title(); ?></p></a>
-            </div>
-            <div class="info_bottom">
-              <p class="price"><?php the_field('price'); ?></p>
-              <a href="#" class="btn">Заказать</a>
-              <a class="show_all" href="#">Смотреть всё</a>
-            </div>
-          </div>
-        </div>
+        show_avtopark_item(); ?>
       <?php endwhile; ?>
     </div>
-	<?php endif; ?>
-
-    <!-- <div class="avtopark_item">
-      <div class="img">
-        <a href="#"><img src="<?php // echo TEMPLATE_URL; ?>/img/4. Скания CIFA 31 с бетономиксером 9 куб.м.jpg" alt=""></a>
-      </div>
-      <div class="info">
-        <div class="info_top">
-          <p class="param">Вертикальный вылет - 24 м.</p>
-          <a href=# class="name">Мерседес АТЕГО Schwing-24</p></a>
-        </div>
-        <div class="info_bottom">
-          <p class="price">3 000 ₽ / час</p>
-          <a href="" class="btn">Заказать</a>
-          <a class="show_all" href="#">Смотреть всё</a>
-        </div>
-      </div>
-    </div>
-    <div class="avtopark_item">
-      <div class="img">
-        <a href="#"><img src="<?php // echo TEMPLATE_URL; ?>/img/3. Мерседес АКТРАС Putzmeister-28.jpg" alt=""></a>
-      </div>
-      <div class="info">
-        <div class="info_top">
-          <p class="param">Вертикальный вылет - 24 м.</p>
-          <a href=# class="name">Мерседес АТЕГО Schwing-24</p></a>
-        </div>
-        <div class="info_bottom">
-          <p class="price">3 000 ₽ / час</p>
-          <a href="" class="btn">Заказать</a>
-          <a class="show_all" href="#">Смотреть всё</a>
-        </div>
-      </div>
-    </div> -->
-  <?php
+	<?php wp_reset_postdata(); endif;
 }
+

@@ -622,6 +622,12 @@ footer .container .phone {
   padding: 0 0 60px;
 }
 
+.autopark_slider.transport {
+  margin-top: 100px;
+  padding-bottom: 0;
+  margin-bottom: 60px;
+}
+
 .autopark_slider .top_row {
   display: flex;
   align-items: center;
