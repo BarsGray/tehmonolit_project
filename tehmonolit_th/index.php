@@ -19,7 +19,6 @@
   </div>
 </div>
 <?php show_avtopark_slider(); ?>
-</div>
 <div class="advantages">
   <div class="container">
     <p class="title">Почему выбирают нашу технику</p>
