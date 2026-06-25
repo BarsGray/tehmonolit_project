@@ -290,6 +290,55 @@ h5,
   font-size: 32px;
 }
 
+.category_page_item {
+  margin: 60px 0;
+}
+
+.table_price_link {
+  transition: color .3s ease-in-out;
+}
+.table_price_link:hover {
+  color: #FF833D;
+}
+
+.category_page_item_btn,
+.link_on {
+  color: #FF833D;
+  transition: color .3s ease-in-out;
+}
+
+.category_page_item_btn:hover,
+.link_on:hover {
+  color: #686868;
+}
+.category_page_item_btn {
+  position: relative;
+  padding-right: 26px;
+}
+.category_page_item_btn::after,
+.category_page_item_btn::before {
+  content: "";
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  background: url("img/arrow_red.svg");
+  transition: opacity 0.3s ease-in-out;
+}
+
+.category_page_item_btn::after {
+  opacity: 0;
+  background: url("img/arrow_gray.svg");
+}
+.category_page_item_btn:hover::before {
+  opacity: 0;
+}
+.category_page_item_btn:hover::after {
+  opacity: 1;
+}
+
 .swiper-pagination-bullet {
   transition: all .3s ease-in-out, background-color .3s ease-in-out .1s
 }
@@ -645,6 +694,11 @@ footer .container .phone {
   gap: 28px;
 }
 
+.avtopark_section {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
 .avtopark_item .show_all,
 .autopark_slider .show_all {
   position: relative;
@@ -725,6 +779,7 @@ footer .container .phone {
   background-color: #fff;
 }
 
+.category_page_item_name a,
 .avtopark_item .name,
 .autopark_slider .name {
   margin-bottom: 20px;
@@ -733,6 +788,11 @@ footer .container .phone {
   display: block;
   transition: color .3s ease-in-out;
 }
+
+.category_page_item_name a:hover {
+  color: #282828;
+}
+
 
 .avtopark_item .name[href]:hover,
 .autopark_slider .name[href]:hover {
@@ -1193,7 +1253,7 @@ td {
   height: 62px;
 }
 
-td + td {
+td+td {
   white-space: nowrap;
 }
 
@@ -1345,6 +1405,7 @@ td + td {
   padding: 0;
   padding-left: 25px;
 }
+
 .content ol {
   padding: 23px;
   list-style: decimal outside;
@@ -1364,15 +1425,6 @@ td + td {
   content: "•";
   position: absolute;
   left: -16px;
-}
-
-.content img.alignright,
-.content img.alignleft,
-.content img.aligncenter {
-  display: block;
-  float: none;
-  margin: 0 auto 10px;
-  max-width: 100%;
 }
 
 .content img {
@@ -1602,6 +1654,7 @@ img.attachment-post-thumbnail {
     padding: 5px 8px;
   }
 
+  .category_page_item_name a,
   .avtopark_item .name,
   .autopark_slider .name {
     font-size: 20px;
@@ -1958,6 +2011,7 @@ img.attachment-post-thumbnail {
     padding: 3px 5px;
   }
 
+  .category_page_item_name a,
   .avtopark_item .name,
   .autopark_slider .name {
     font-size: 17px;
@@ -2041,6 +2095,15 @@ img.attachment-post-thumbnail {
 
   footer {
     margin-top: 120px;
+  }
+
+  .content img.alignright,
+  .content img.alignleft,
+  .content img.aligncenter {
+    display: block;
+    float: none;
+    margin: 0 auto 10px;
+    max-width: 100%;
   }
 }
 
@@ -2162,7 +2225,7 @@ img.attachment-post-thumbnail {
   }
 
   .avtopark_item img {
-    height: 180px;
+    height: 200px;
   }
 }
 

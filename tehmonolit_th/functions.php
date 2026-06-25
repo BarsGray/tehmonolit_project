@@ -3,11 +3,14 @@ function show_title_box() { ?>
   <div class="content_container">
     <?php breadcrumbs();
       $title = '';
-      if(is_404()) {
+      if (is_tax())
+        $title = (get_field('alt_zag')) ? get_field('alt_zag') : single_term_title();
+      elseif(is_category())
+        $title = (get_field('alt_zag')) ? get_field('alt_zag') : single_cat_title('', false);
+      elseif(is_404())
         $title = 'Ошибка 404!';
-      } else {
+      else
         $title = (get_field('alt_zag')) ? get_field('alt_zag') : get_the_title();
-      }
       if(!is_singular('service')) { ?><h1 class="title"><?php echo $title; } ?></h1>
   </div>
 <?php };
@@ -111,7 +114,7 @@ function show_avtopark_item ($value = '') {
   $price          = get_field('price');
   ?>
   <div class="<?php echo $avtopark_calss; ?>">
-    <div class="img"><a <?php echo ($isSingle) ? 'data-fancybox':''; ?> href="<?php echo (!$isSingle) ? $link : $link_img; ?>"><?php the_post_thumbnail(); ?></a></div>
+    <div class="img"><a <?php echo ($isSingle) ? 'data-fancybox':''; ?> href="<?php echo (!$isSingle) ? $link : $link_img; ?>"><?php the_post_thumbnail('custom-gallery-thumb_35_30'); ?></a></div>
     <div class="info">
       <div class="info_top">
         <?php if($vilet):?><p class="param">Вертикальный вылет - <?php echo $vilet; ?>.</p><?php endif; ?>
@@ -188,4 +191,20 @@ function show_avtopark_table() {
       </table>
     </div>
   <?php endif; ?>
+<?php }
+
+function show_services_table() {
+  $query = new WP_Query(['post_type' => 'service','posts_per_page' => -1,]); ?>
+  <div class="table_price">
+    <table>
+      <tbody>
+        <tr><th>Автобетононасос</th><th>Высота стрелы</th><th>Стоимость услуг с НДС 18%</th></tr>
+        <?php if($query->have_posts()):?>
+          <?php while ($query->have_posts()): $query->the_post(); ?>
+            <tr><td><a class="table_price_link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td><td><?php the_field('vilet'); ?></td><td><?php the_field('price'); ?></td></tr>
+          <?php endwhile; ?>
+        <?php wp_reset_postdata(); endif; ?>
+      </tbody>
+    </table>
+  </div>
 <?php }

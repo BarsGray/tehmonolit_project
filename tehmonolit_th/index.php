@@ -65,4 +65,9 @@
   </div>
 </div>
 <?php echo show_foto_slider(); ?>
+<div class="content_container">
+  <div class="content">
+    <?php the_content(); ?>
+  </div>
+</div>
 <?php get_footer(); ?>
