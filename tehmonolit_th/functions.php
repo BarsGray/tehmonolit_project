@@ -18,6 +18,7 @@ function show_title_box() { ?>
 function show_foto_slider() {
   $foto_slider_title = '';
   $slides = '';
+  $foto_page_link = get_permalink(17);
 	if (get_field('foto_gallery', 17)){
     $count = 0;
     foreach(get_field('foto_gallery', 17) as $item) {
@@ -31,7 +32,7 @@ function show_foto_slider() {
     <div class="foto_slider_top_row">
       <div class="container">
         <p class="title">Бетонируем сложные объекты профессионально</p>
-        <a href="#" class="btn">Фотогалерея</a>
+        <a href="$foto_page_link" class="btn">Фотогалерея</a>
         <p class="text">Приезжаем в назначенное время. Заливаем без потери качества. Убираем за собой. Наши операторы
           управляют бетононасосом и следят за каждым этапом — от развертки стрелы до промывки после смены. Техника
           проходит ТО перед каждым выездом. Вы получаете кубометры, а не головную боль.</p>
@@ -112,6 +113,8 @@ function show_avtopark_item ($value = '') {
   $avtopark_calss = ($isSlider) ? 'slider_item swiper-slide' : 'avtopark_item' . ($isSingle ? ' single' : '');
   $vilet          = get_field('vilet');
   $price          = get_field('price');
+  $number_1       = get_field('number_1', FRONT_PAGE);
+  $show_all       = ($isSingle) ? 11 : 14;
   ?>
   <div class="<?php echo $avtopark_calss; ?>">
     <div class="img"><a <?php echo ($isSingle) ? 'data-fancybox':''; ?> href="<?php echo (!$isSingle) ? $link : $link_img; ?>"><?php the_post_thumbnail('custom-gallery-thumb_35_30'); ?></a></div>
@@ -122,8 +125,8 @@ function show_avtopark_item ($value = '') {
       </div>
       <div class="info_bottom">
         <?php if($price):?><p class="price"><?php echo $price; ?></p><?php endif; ?>
-        <a href="#" class="btn">Заказать</a>
-        <?php if(!$isSlider):?><a class="show_all" href="#">Смотреть всё</a><?php endif; ?>
+        <a href="tel:<?php echo ($number_1) ? merge_numbers($number_1) : ''; ?>" class="btn">Заказать</a>
+        <?php if(!$isSlider):?><a class="show_all" href="<?php echo the_permalink($show_all); ?>">Смотреть всё</a><?php endif; ?>
       </div>
     </div>
   </div>
@@ -132,30 +135,30 @@ function show_avtopark_item ($value = '') {
 function show_avtopark_slider($transport = '') {
   $query = new WP_Query(['post_type' => 'service','posts_per_page' => -1,]);
   if ($query->have_posts()): ?>
-  <div class="autopark_slider <?php echo $transport; ?>">
-    <div class="container">
-      <div class="top_row">
-        <div class="left_box">
-          <p class="title">Автопарк</p>
-          <a class="show_all" href="#">Смотреть всё</a>
+    <div class="autopark_slider <?php echo $transport; ?>">
+      <div class="container">
+        <div class="top_row">
+          <div class="left_box">
+            <p class="title">Автопарк</p>
+            <a class="show_all" href="<?php echo get_permalink(11); ?>">Смотреть всё</a>
+          </div>
+          <div class="right_box">
+            <a class="btn_prev" href="#"><span class="avtive"></span><span class="hover"></span><span class="unavtive"></span></a>
+            <a class="btn_next" href="#"><span class="avtive"></span><span class="hover"></span><span class="unavtive"></span></a>
+          </div>
         </div>
-        <div class="right_box">
-          <a class="btn_prev" href="#"><span class="avtive"></span><span class="hover"></span><span class="unavtive"></span></a>
-          <a class="btn_next" href="#"><span class="avtive"></span><span class="hover"></span><span class="unavtive"></span></a>
+      </div>
+      <div class="autopark_swiper_container">
+        <div class="autopark_swiper swiper">
+          <div class="slider_row swiper-wrapper">
+            <?php while ($query->have_posts()): $query->the_post();
+              show_avtopark_item('slider'); ?>
+            <?php endwhile; ?>
+          </div>
+          <div class="swiper-scrollbar"></div>
         </div>
       </div>
     </div>
-    <div class="autopark_swiper_container">
-      <div class="autopark_swiper swiper">
-        <div class="slider_row swiper-wrapper">
-          <?php while ($query->have_posts()): $query->the_post();
-            show_avtopark_item('slider'); ?>
-          <?php endwhile; ?>
-        </div>
-        <div class="swiper-scrollbar"></div>
-      </div>
-    </div>
-  </div>
 	<?php wp_reset_postdata(); endif;
 }
 
