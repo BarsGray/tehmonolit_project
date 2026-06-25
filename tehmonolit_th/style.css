@@ -93,10 +93,6 @@ a {
 }
 
 /* =========================== font ====================================== */
-.wrapper {
-  overflow-x: hidden;
-}
-
 @font-face {
   font-family: 'Unbounded';
   font-weight: 400;
@@ -127,7 +123,6 @@ a {
   font-display: swap;
 }
 
-/* =========================== font ====================================== */
 /* =========================== bread_crumb ====================================== */
 .bread,
 .bread_crumb {
@@ -135,6 +130,7 @@ a {
   gap: 16px;
   margin: 40px 0;
   font-size: 14px;
+  flex-wrap: wrap;
 }
 
 .bread .kb_title,
@@ -146,12 +142,16 @@ a {
   transition: color .3s ease-in-out;
 }
 
+.bread .kb_title,
+.bread a {
+  white-space: nowrap;
+}
+
 .bread a:hover {
   color: #FF833D;
 }
 
 /* =========================== bread_crumb ====================================== */
-
 .overlay {
   position: fixed;
   z-index: 999;
@@ -203,6 +203,10 @@ body {
   font-family: 'Unbounded';
   background-color: #F4F4F4;
   color: #202020;
+}
+
+.wrapper {
+  overflow-x: hidden;
 }
 
 .container {
@@ -727,6 +731,12 @@ footer .container .phone {
   font-size: 24px;
   color: #686868;
   display: block;
+  transition: color .3s ease-in-out;
+}
+
+.avtopark_item .name[href]:hover,
+.autopark_slider .name[href]:hover {
+  color: #FF833D;
 }
 
 .avtopark_item .price,
@@ -868,68 +878,6 @@ footer .container .phone {
 .autopark_slider .swiper-button-disabled .hover {
   opacity: 0;
 }
-
-/* 
-.autopark_slider .btn_next:active,
-.autopark_slider .btn_prev:active {
-  transform: translateY(1px);
-}
-
-.autopark_slider .swiper-button-disabled:active {
-  transform: translateY(0);
-}
-
-.autopark_slider .btn_prev::after,
-.autopark_slider .btn_prev::before,
-.autopark_slider .btn_next::before,
-.autopark_slider .btn_next::after {
-  content: '';
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: opacity .3s ease-in-out;
-}
-
-.autopark_slider .btn_prev::after,
-.autopark_slider .btn_next::after {
-  opacity: 0;
-}
-
-.autopark_slider .btn_next::before,
-.autopark_slider .btn_prev::before {
-  opacity: 1;
-}
-
-.autopark_slider .btn_next::after {
-  background: url('img/chevron_grey_next.svg');
-}
-
-.autopark_slider .btn_next::before {
-  background: url('img/chevron_black_next.svg');
-}
-
-.autopark_slider .btn_prev::after {
-  background: url('img/chevron_grey_prev.svg');
-}
-
-.autopark_slider .btn_prev::before {
-  background: url('img/chevron_black_prev.svg');
-}
-
-.autopark_slider .swiper-button-disabled {
-  border: 2px solid #DED3CB;
-}
-
-.autopark_slider .swiper-button-disabled::after {
-  opacity: 1;
-}
-
-.autopark_slider .swiper-button-disabled::before {
-  opacity: 0;
-} */
 
 .autopark_swiper_container {
   max-width: calc(1464px + 52px);
@@ -1243,18 +1191,21 @@ td {
   font-weight: 400;
   color: #282828;
   height: 62px;
+}
+
+td + td {
   white-space: nowrap;
 }
 
-.table_params,
 .table_price {
   overflow: auto;
   padding-bottom: 40px;
 }
 
 .table_params {
-  padding: 20px 0;
-  margin-bottom: 20px;
+  overflow: auto;
+  /* padding: 20px 0; */
+  margin-bottom: 40px;
 }
 
 .table_params,
@@ -1388,15 +1339,25 @@ td {
   margin-right: auto;
 }
 
+.content ol,
 .content ul {
   list-style: none;
   padding: 0;
   padding-left: 25px;
 }
+.content ol {
+  padding: 23px;
+  list-style: decimal outside;
+}
 
+.content ol li,
 .content ul li {
   margin-bottom: 30px;
   position: relative;
+}
+
+.content ol li {
+  padding-left: 2px;
 }
 
 .content ul li::before {
@@ -1501,6 +1462,7 @@ img.attachment-post-thumbnail {
   transform: translateX(-50%);
   grid-column: 1/-1;
   line-height: 1.4;
+  white-space: nowrap;
 }
 
 @media (max-width: 1516px) {
@@ -1618,6 +1580,10 @@ img.attachment-post-thumbnail {
     margin-top: 40px;
     gap: 12px;
     padding-left: 20px;
+  }
+
+  .gallery {
+    gap: 12px;
   }
 }
 
@@ -1828,6 +1794,10 @@ img.attachment-post-thumbnail {
     font-size: 14px;
     padding: 7px 26px;
     border-radius: 12px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -2083,6 +2053,15 @@ img.attachment-post-thumbnail {
   .avtopark_item img {
     width: 100%;
     height: 220px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+
+  .gallery_item {
+    border-radius: 12px;
   }
 }
 

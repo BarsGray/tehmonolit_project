@@ -107,16 +107,18 @@ function show_avtopark_item ($value = '') {
   $link           = (!$isSingle) ? get_permalink() : '';
   $link_img       = ($isSingle) ? get_the_post_thumbnail_url(get_the_ID(), 'full') : '';
   $avtopark_calss = ($isSlider) ? 'slider_item swiper-slide' : 'avtopark_item' . ($isSingle ? ' single' : '');
+  $vilet          = get_field('vilet');
+  $price          = get_field('price');
   ?>
   <div class="<?php echo $avtopark_calss; ?>">
     <div class="img"><a <?php echo ($isSingle) ? 'data-fancybox':''; ?> href="<?php echo (!$isSingle) ? $link : $link_img; ?>"><?php the_post_thumbnail(); ?></a></div>
     <div class="info">
       <div class="info_top">
-        <p class="param">Вертикальный вылет - <?php the_field('vilet'); ?>.</p>
+        <?php if($vilet):?><p class="param">Вертикальный вылет - <?php echo $vilet; ?>.</p><?php endif; ?>
         <a <?php echo ($link ==! '') ? "href='$link'" : ''; ?> class="name"><?php the_title(); ?></a>
       </div>
       <div class="info_bottom">
-        <p class="price"><?php the_field('price'); ?></p>
+        <?php if($price):?><p class="price"><?php echo $price; ?></p><?php endif; ?>
         <a href="#" class="btn">Заказать</a>
         <?php if(!$isSlider):?><a class="show_all" href="#">Смотреть всё</a><?php endif; ?>
       </div>
@@ -166,3 +168,24 @@ function show_avtopark() { ?>
 	<?php wp_reset_postdata(); endif;
 }
 
+function show_avtopark_table() {
+  $params = get_field('params');
+  $vilet  = get_field('vilet'); ?>
+  <?php if(!empty($params) || !empty($vilet)): ?>
+    <div class="table_params">
+      <table>
+        <tbody>
+          <tr><th>Характеристика</th><th>Значение</th></tr>
+          <?php if($vilet):?>
+            <tr><td>Вертикальный вылет</td><td><?php echo $vilet; ?></td></tr>
+          <?php endif; ?>
+          <?php if (!empty($params) && is_array($params)):?>
+            <?php foreach ($params as $item):?>
+              <tr><td><?php echo $item['parametr_neme']; ?></td><td><?php echo $item['parametr']; ?></td></tr>
+            <?php endforeach;?>
+          <?php endif; ?>
+        </tbody>
+      </table>
+    </div>
+  <?php endif; ?>
+<?php }
