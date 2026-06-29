@@ -88,7 +88,7 @@ function show_contacts() {
   <?php if($max):?>
     <div class="contacts_row">
       <p class="label">Мессенджер</p>
-      <p class="value"><a class="social_link max" href="<?php echo $max; ?>"></a></p>
+      <p class="value"><a class="social_link max"  rel="nofollow" target="_blank" href="<?php echo $max; ?>"></a></p>
     </div>
   <?php endif; ?>
 <?php }

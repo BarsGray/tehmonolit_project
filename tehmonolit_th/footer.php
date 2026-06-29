@@ -6,7 +6,7 @@
           <a class="phone" href="tel:<?php echo merge_numbers(get_field('number_1', FRONT_PAGE)); ?>"><?php echo SVG_PHONE; ?><span><?php the_field('number_1', FRONT_PAGE); ?></span></a>
         <?php endif; ?>
         <?php if (get_field('max', FRONT_PAGE)): ?>
-          <a class="footer_max" href="<?php the_field('max', FRONT_PAGE); ?>">Мы в MAX</a>
+          <a class="footer_max" rel="nofollow" target="_blank" href="<?php the_field('max', FRONT_PAGE); ?>">Мы в MAX</a>
         <?php endif; ?>
         <div class="copy_row"><span>2026</span><a href="https://www.vzh.ru/"><img src="<?php bloginfo('template_url'); ?>/img/logo_vzh.svg" alt="vzh.ru"></a></div>
       </div>

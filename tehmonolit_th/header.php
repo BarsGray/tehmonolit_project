@@ -3,7 +3,9 @@
 
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="<?php bloginfo('template_url') ?>/img/logo_fav.svg" type="image/x-icon">
   <title><?php bloginfo('name'); ?></title>
   <?php wp_head(); ?>
 </head>
@@ -18,12 +20,12 @@
           <div class="menu_wrap">
             <?php wp_nav_menu('menu=top_menu&container=nav&container_class=menu');?>
 						<?php if (get_field('max', FRONT_PAGE)): ?>
-              <a class="social_link menu_max" href="<?php the_field('max', FRONT_PAGE); ?>"></a>
+              <a class="social_link menu_max" rel="nofollow" target="_blank" href="<?php the_field('max', FRONT_PAGE); ?>"></a>
             <?php endif; ?>
           </div>
           <div class="header_contacts">
 						<?php if (get_field('max', FRONT_PAGE)): ?>
-              <a class="social_link max" href="<?php the_field('max', FRONT_PAGE); ?>"></a>
+              <a class="social_link max" rel="nofollow" target="_blank" href="<?php the_field('max', FRONT_PAGE); ?>"></a>
             <?php endif; ?>
 						<?php if (get_field('number_1', FRONT_PAGE)): ?>
               <a class="phone" href="tel:<?php echo merge_numbers(get_field('number_1', FRONT_PAGE));?>"><?php echo SVG_PHONE; ?><span><?php the_field('number_1', FRONT_PAGE); ?></span></a>

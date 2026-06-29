@@ -12,7 +12,7 @@
         <a class="bunner_call_btn" href="tel:<?php echo merge_numbers(get_field('number_1', FRONT_PAGE));?>"><span>Позвонить</span></a>
       <?php endif; ?>
       <?php if (get_field('max', FRONT_PAGE)): ?>
-        <a class="bunner_max_btn" href="<?php the_field('max', FRONT_PAGE); ?>"><span>Написать в MAX</span></a>
+        <a class="bunner_max_btn" rel="nofollow" target="_blank" href="<?php the_field('max', FRONT_PAGE); ?>"><span>Написать в MAX</span></a>
       <?php endif; ?>
     </div>
     <div class="img_bg"></div>
