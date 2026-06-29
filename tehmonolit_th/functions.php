@@ -114,7 +114,7 @@ function show_avtopark_item ($value = '') {
   $vilet          = get_field('vilet');
   $price          = get_field('price');
   $number_1       = get_field('number_1', FRONT_PAGE);
-  $show_all       = ($isSingle) ? 11 : 14;
+  // $show_all       = ($isSingle) ? 11 : 14;
   ?>
   <div class="<?php echo $avtopark_calss; ?>">
     <div class="img"><a <?php echo ($isSingle) ? 'data-fancybox':''; ?> href="<?php echo (!$isSingle) ? $link : $link_img; ?>"><?php the_post_thumbnail('custom-gallery-thumb_35_30'); ?></a></div>
@@ -126,7 +126,7 @@ function show_avtopark_item ($value = '') {
       <div class="info_bottom">
         <?php if($price):?><p class="price"><?php echo $price; ?></p><?php endif; ?>
         <a href="tel:<?php echo ($number_1) ? merge_numbers($number_1) : ''; ?>" class="btn">Заказать</a>
-        <?php if(!$isSlider):?><a class="show_all" href="<?php echo the_permalink($show_all); ?>">Смотреть всё</a><?php endif; ?>
+        <?php if(!$isSlider):?><a class="show_all" href="<?php ($isSingle) ? the_permalink(11): the_permalink(); ?>"> <?php echo ($isSingle) ? 'Смотреть всё' : 'Подробнее'?></a><?php endif; ?>
       </div>
     </div>
   </div>
