@@ -1,13 +1,12 @@
-<?php
-	get_header();
-
-	$qo=get_queried_object();
-	$paged = get_query_var('paged') ? get_query_var('paged') : (get_query_var('page') ? get_query_var('page') : 1);
-	query_posts(array('cat' => $qo->term_id,'paged' => $paged));
-?>
+<?php get_header(); ?>
 
   <div class="container">
 		<?php show_title_box(); ?>
+		<?php
+			$qo=get_queried_object();
+			$paged = get_query_var('paged') ? get_query_var('paged') : (get_query_var('page') ? get_query_var('page') : 1);
+			query_posts(array('cat' => $qo->term_id,'paged' => $paged));
+		?>
 		<div class="content_container">
 			<div class="content">
 				<?php the_field("text_before", $qo); ?>
