@@ -83,13 +83,33 @@ h2,.h2,.content h2,.content .h2,
 h3,.h3,.content h3,.content .h3,
 h4,.h4,.content h4,.content .h4,
 h5,.h5,.content h5,.content .h5,
+h6,.h6,.content h6,.content .h6 {font-weight: 400;margin-bottom: 40px; margin-top: 20px;}
+h1,.h1,.content h1,.content .h1 {font-size: 40px;}
+h2,.h2,.content h2,.content .h2 {font-size: 38px;}
+h3,.h3,.content h3,.content .h3 {font-size: 36px;}
+h4,.h4,.content h4,.content .h4 {font-size: 34px;}
+h5,.h5,.content h5,.content .h5 {font-size: 32px;}
+h6,.h6,.content h6,.content .h6 {font-size: 30px;}
+/* h1,.h1,.content h1,.content .h1,
+h2,.h2,.content h2,.content .h2,
+h3,.h3,.content h3,.content .h3,
+h4,.h4,.content h4,.content .h4,
+h5,.h5,.content h5,.content .h5,
 h6,.h6,.content h6,.content .h6 {font-weight: 400;margin-bottom: 40px;}
 h1,.h1,.content h1,.content .h1 {font-size: 45px;}
 h2,.h2,.content h2,.content .h2 {font-size: 40px;}
 h3,.h3,.content h3,.content .h3 {font-size: 38px;}
 h4,.h4,.content h4,.content .h4 {font-size: 36px;}
 h5,.h5,.content h5,.content .h5 {font-size: 34px;}
-h6,.h6,.content h6,.content .h6 {font-size: 32px;}
+h6,.h6,.content h6,.content .h6 {font-size: 32px;} */
+
+.content h1,.content .h1,
+.content h2,.content .h2,
+.content h3,.content .h3,
+.content h4,.content .h4,
+.content h5,.content .h5,
+.content h6,.content .h6 {margin-bottom: 15px; line-height: 1.1;}
+
 .category_page_item {margin: 60px 0;}
 .table_price_link {transition: color .3s ease-in-out;}
 .table_price_link:hover {color: #FF833D;}
@@ -309,17 +329,19 @@ footer .container .phone {justify-self: end;}
 .autopark_slider .top_row {display: flex;align-items: center;justify-content: space-between;margin-bottom: 32px;}
 .autopark_slider .left_box {display: flex;align-items: center;gap: 28px;}
 .avtopark_section {margin-top: 40px;margin-bottom: 40px;}
-.avtopark_item .show_all,.autopark_slider .show_all {
+.content .show_all,.avtopark_item .show_all,.autopark_slider .show_all {
   position: relative;
   font-size: 16px;
   padding-right: 26px;
   height: fit-content;
   transition: color .3s ease-in-out;
+  font-weight: 500;
+  cursor: pointer;
 }
-.avtopark_item .show_all:hover,.autopark_slider .show_all:hover {color: #FF6824;}
-.avtopark_item .show_all:hover::after,.autopark_slider .show_all:hover::after {opacity: 1;}
-.avtopark_item .show_all:hover::before,.autopark_slider .show_all:hover::before {opacity: 0;}
-.avtopark_item .show_all::after,.autopark_slider .show_all::after,.avtopark_item .show_all::before,.autopark_slider .show_all::before {
+.content .show_all:hover,.avtopark_item .show_all:hover,.autopark_slider .show_all:hover {color: #FF6824;}
+.content .show_all:hover::after,.avtopark_item .show_all:hover::after,.autopark_slider .show_all:hover::after {opacity: 1;}
+.content .show_all:hover::before,.avtopark_item .show_all:hover::before,.autopark_slider .show_all:hover::before {opacity: 0;}
+.content .show_all::after,.show_all::before,.avtopark_item .show_all::after,.autopark_slider .show_all::after,.avtopark_item .show_all::before,.autopark_slider .show_all::before {
   content: '';
   width: 22px;
   height: 22px;
@@ -330,7 +352,7 @@ footer .container .phone {justify-self: end;}
   background: url('img/arrow.svg');
   transition: opacity .3s ease-in-out;
 }
-.avtopark_item .show_all::after,.autopark_slider .show_all::after {opacity: 0;background: url('img/arrow_red.svg');}
+.content .show_all::after,.avtopark_item .show_all::after,.autopark_slider .show_all::after {opacity: 0;background: url('img/arrow_red.svg');}
 .autopark_slider .slider_row {display: flex;}
 .autopark_slider .slider_item {
   max-width: 348px;
@@ -536,9 +558,10 @@ footer .container .phone {justify-self: end;}
 }
 .foto_slider_top_row .btn:hover {background-color: #282828;color: #fff;}
 .foto_slider__pagination {display: none;}
-.title {font-size: 45px;margin-bottom: 40px;}
+/* .title {font-size: 45px;margin-bottom: 40px;} */
+.title {font-size: 40px;margin-bottom: 40px; line-height: 1.1;}
 table {width: 100%;line-height: 1.4;border-collapse: collapse;}
-tr:nth-child(odd):not(:first-child) {background: #fff;}
+tr:nth-child(odd):not(:first-child,.content table tr) {background: #fff;}
 th {
   font-size: 14px;
   color: #878787;
@@ -560,20 +583,25 @@ td {
   color: #282828;
   height: 62px;
 }
-td+td {white-space: nowrap;}
+td+td:not(.content table td) {white-space: nowrap;}
+.content table tbody {min-width: 700px;display: block;}
+.content table td {padding-right: 10px;}
 .table_price {overflow: auto;padding-bottom: 40px;}
-.table_params {overflow: auto;margin-bottom: 40px;}
-.table_params,.table_price {
+.content table,.table_params {overflow: auto;margin-bottom: 40px;}
+.content table,.table_params,.table_price {
   overflow-x: auto;
   /* Firefox */
   scrollbar-width: thin;
   scrollbar-color: #FFCF30 #C7C7C7;
 }
+.content table {
+  display: block;
+}
 /* Chrome, Edge, Safari */
-.table_params::-webkit-scrollbar,.table_price::-webkit-scrollbar {height: 8px;}
-.table_params::-webkit-scrollbar-track,.table_price::-webkit-scrollbar-track {background: #C7C7C7;border-radius: 999px;}
-.table_params::-webkit-scrollbar-thumb,.table_price::-webkit-scrollbar-thumb {background: #999;border-radius: 999px;}
-.table_params::-webkit-scrollbar-thumb:hover,.table_price::-webkit-scrollbar-thumb:hover {background: #777;}
+.content table::-webkit-scrollbar,.table_params::-webkit-scrollbar,.table_price::-webkit-scrollbar {height: 8px;}
+.content table::-webkit-scrollbar-track,.table_params::-webkit-scrollbar-track,.table_price::-webkit-scrollbar-track {background: #C7C7C7;border-radius: 999px;}
+.content table::-webkit-scrollbar-thumb,.table_params::-webkit-scrollbar-thumb,.table_price::-webkit-scrollbar-thumb {background: #999;border-radius: 999px;}
+.content table::-webkit-scrollbar-thumb:hover,.table_params::-webkit-scrollbar-thumb:hover,.table_price::-webkit-scrollbar-thumb:hover {background: #777;}
 .avtopark_item {
   display: flex;
   gap: 24px;
@@ -581,6 +609,7 @@ td+td {white-space: nowrap;}
   padding: 40px 0;
   border-bottom: 1px solid #C9C9C9;
 }
+
 .avtopark_item.single {padding-top: 0;border: 0;}
 .avtopark_item:first-child {padding-top: 0;}
 .avtopark_item:last-child {padding-bottom: 0;border-bottom: none;}
@@ -612,7 +641,7 @@ td+td {white-space: nowrap;}
 .tel:hover {color: #FF6824;}
 .contacts_row:last-child {margin-bottom: 0;}
 .content {font-weight: 300;line-height: 1.8;}
-.content p {margin-bottom: 20px;font-size: 18px;}
+.content p {margin-top: 20px; margin-bottom: 20px;font-size: 18px;}
 .content img {max-width: 100%;max-height: 100%;width: auto;height: auto;}
 .content img.aligncenter {display: block;margin-left: auto;margin-right: auto;}
 .content ol,.content ul {list-style: none;padding: 0;padding-left: 25px;}
@@ -641,6 +670,7 @@ img.attachment-post-thumbnail {display: block;margin: 0 auto 30px;}
   grid-gap: 24px;
   padding-bottom: 88px;
   position: relative;
+  margin-bottom: 20px;
 }
 .gallery_item {
   border-radius: 16px;
@@ -667,6 +697,19 @@ img.attachment-post-thumbnail {display: block;margin: 0 auto 30px;}
   line-height: 1.4;
   white-space: nowrap;
 }
+.hide_text {max-height: 400px;height: fit-content;overflow: hidden;position: relative;}
+.hide_text.active {max-height: 5000px;transition: all 1s ease-in-out;}
+.hide_text::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	background: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 0), #F2F2F2);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #F2F2F2);
+}
+.hide_text.active::after {display: none;}
 @media (max-width: 1516px) {
   .img_bg {margin-top: calc(23vw - 800px);}
   .autopark_swiper {overflow: visible;}
@@ -739,6 +782,13 @@ img.attachment-post-thumbnail {display: block;margin: 0 auto 30px;}
   .title {font-size: 40px;}
   .content p {font-size: 17px;}
   .content_img img {border-radius: 24px;}
+
+  h1,.h1,.content h1,.content .h1 {font-size: 35px;}
+  h2,.h2,.content h2,.content .h2 {font-size: 33px;}
+  h3,.h3,.content h3,.content .h3 {font-size: 31px;}
+  h4,.h4,.content h4,.content .h4 {font-size: 29px;}
+  h5,.h5,.content h5,.content .h5 {font-size: 27px;}
+  h6,.h6,.content h6,.content .h6 {font-size: 25px;}
 }
 @media (max-width: 890px) {
   .foto_slider_top_row .container {grid-template-columns: 1fr;gap: 20px;}
@@ -851,6 +901,13 @@ img.attachment-post-thumbnail {display: block;margin: 0 auto 30px;}
     width: 34px;
     height: 34px;
   }
+  h1,.h1,.content h1,.content .h1 {font-size: 25px;}
+  h2,.h2,.content h2,.content .h2 {font-size: 23px;}
+  h3,.h3,.content h3,.content .h3 {font-size: 21px;}
+  h4,.h4,.content h4,.content .h4 {font-size: 19px;}
+  h5,.h5,.content h5,.content .h5 {font-size: 17px;}
+  h6,.h6,.content h6,.content .h6 {font-size: 15px;}
+
   .content p {font-size: 16px;}
   footer {margin-top: 120px;}
   .content img.alignright,.content img.alignleft,.content img.aligncenter {
@@ -903,7 +960,7 @@ img.attachment-post-thumbnail {display: block;margin: 0 auto 30px;}
   .bunner .text {width: 100%;}
   .header_box {padding: 8px;border-radius: 20px;}
   .bunner {padding: 10px 0 40px;}
-  .avtopark_item .show_all,.autopark_slider .show_all {font-size: 14px;}
+  .content .show_all,.avtopark_item .show_all,.autopark_slider .show_all {font-size: 14px;}
   .autopark_slider .title {font-size: 20px;}
   .advantages_box {padding: 12px;}
 }

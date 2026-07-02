@@ -64,9 +64,10 @@
   </div>
 </div>
 <?php echo show_foto_slider(); ?>
-<div class="content_container">
+<div class="container">
   <div class="content">
-    <?php the_content(); ?>
+    <div class="hide_text"><?php the_content(); ?></div>
+    <a class="more show_all">Подробнее</a>
   </div>
 </div>
 <?php get_footer(); ?>

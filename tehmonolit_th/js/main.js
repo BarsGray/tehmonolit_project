@@ -152,3 +152,21 @@ if (!gallery_item.length == 0) {
     galleryCounter();
   });
 }
+
+// ======================= Show more content =============
+	const hideContainer = document.querySelector('.hide_text');
+	const btnMore = document.querySelector('.more');
+
+	if (btnMore) {
+		btnMore.addEventListener('click', () => {
+			hideContainer.classList.toggle('active');
+
+			if (hideContainer.classList.contains('active')) {
+				btnMore.innerHTML = 'Cвернуть';
+				btnMore.classList.add('active');
+			} else {
+				btnMore.innerHTML = 'Подробнее';
+				btnMore.classList.remove('active');
+			}
+		});
+	}
