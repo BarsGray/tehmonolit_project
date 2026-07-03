@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
   <div class="container">
 		<?php show_title_box(); ?>
 		<?php
@@ -11,15 +10,17 @@
 			<div class="content">
 				<?php the_field("text_before", $qo); ?>
 				<?php if(have_posts()){ echo '<div class="services_page">';
-					while(have_posts()) { the_post(); ?>
+					while(have_posts()) { the_post();
+							$link = get_permalink(); ?>
 							<div class="category_page_item">
-								<div class="category_page_item_img">
-									<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('custom-gallery-thumb_35_30'); ?></a>
-								</div>
+								<?php $post_thumbnail = get_the_post_thumbnail(get_the_ID(),'custom-gallery-thumb_35_30'); ?>
+								<?php if($post_thumbnail): ?>
+									<div class="category_page_item_img"><a href="<?php echo $link; ?>"><?php echo $post_thumbnail; ?></a></div>
+								<?php endif; ?>
 								<div class="category_page_item_rigth">
-									<p class="category_page_item_name"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+									<p class="category_page_item_name"><a href="<?php echo $link; ?>"><?php the_title(); ?></a></p>
 									<p class="category_page_item_description"><?php echo wp_trim_words( get_the_content(), 20, '...' ); ?></p>
-									<a class="category_page_item_btn" href="<?php the_permalink(); ?>">Узнать больше</a>
+									<a class="category_page_item_btn" href="<?php echo $link; ?>">Узнать больше</a>
 								</div>
 							</div>
 						<?php } echo '</div>';
@@ -29,5 +30,4 @@
 			</div>
 		</div>
 	</div>
-
 <?php get_footer(); ?>

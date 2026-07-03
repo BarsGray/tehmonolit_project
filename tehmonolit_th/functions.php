@@ -6,7 +6,7 @@ function show_title_box() { ?>
       if (is_tax())
         $title = (get_field('alt_zag')) ? get_field('alt_zag') : single_term_title();
       elseif(is_category())
-        $title = (get_field('alt_zag')) ? get_field('alt_zag') : single_cat_title('', false);
+        $title = single_cat_title('', false);
       elseif(is_404())
         $title = 'Ошибка 404!';
       else
@@ -114,6 +114,8 @@ function show_avtopark_item ($value = '') {
   $vilet          = get_field('vilet');
   $price          = get_field('price');
   $number_1       = get_field('number_1', FRONT_PAGE);
+  $alt_zag        = get_field('alt_zag');
+  $title          = ($alt_zag && $isSingle) ? get_field('alt_zag') : get_the_title();
   // $show_all       = ($isSingle) ? 11 : 14;
   ?>
   <div class="<?php echo $avtopark_calss; ?>">
@@ -121,10 +123,12 @@ function show_avtopark_item ($value = '') {
     <div class="info">
       <div class="info_top">
         <?php if($vilet):?><p class="param">Вертикальный вылет - <?php echo $vilet; ?>.</p><?php endif; ?>
-        <a <?php echo ($link ==! '') ? "href='$link'" : ''; ?> class="name"><?php the_title(); ?></a>
+        <?php if ($link ==! '') {echo "<a href='$link' class='name'>$title</a>";}
+              elseif ($alt_zag) {echo "<h1 class='name'>$title</h1>";}
+              else              {echo "<p class='name'>$title</p>";} ?>
       </div>
       <div class="info_bottom">
-        <?php if($price):?><p class="price"><?php echo $price; ?></p><?php endif; ?>
+        <?php if($price):?><p class="price"><?php echo $price; ?>.</p><?php endif; ?>
         <a href="tel:<?php echo ($number_1) ? merge_numbers($number_1) : ''; ?>" class="btn">Заказать</a>
         <?php if(!$isSlider):?><a class="show_all" href="<?php ($isSingle) ? the_permalink(11): the_permalink(); ?>"> <?php echo ($isSingle) ? 'Смотреть всё' : 'Подробнее'?></a><?php endif; ?>
       </div>
