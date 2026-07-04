@@ -117,8 +117,8 @@ h6,.h6,.content h6,.content .h6 {font-size: 32px;} */
 .content .category_page_item img {width: 348px;border-radius: 16px;height: 260px;object-fit: cover; max-width: unset;}
 .table_price_link {transition: color .3s ease-in-out;}
 .table_price_link:hover {color: #FF833D;}
-.category_page_item_btn,.link_on {color: #FF833D;transition: color .3s ease-in-out;}
-.category_page_item_btn:hover,.link_on:hover {color: #686868;}
+.content a,.category_page_item_btn,.link_on {color: #FF833D;transition: color .3s ease-in-out;}
+.content a:hover,.category_page_item_btn:hover,.link_on:hover {color: #686868;}
 .category_page_item_btn {position: relative;padding-right: 26px;}
 .category_page_item_btn::after,.category_page_item_btn::before {
   content: "";
@@ -701,7 +701,7 @@ img.attachment-post-thumbnail {display: block;margin: 0 auto 30px;}
   white-space: nowrap;
 }
 .hide_text {max-height: 400px;height: fit-content;overflow: hidden;position: relative;}
-.hide_text.active {max-height: 5000px;transition: all 1s ease-in-out;}
+.hide_text.active {max-height: 20000px;transition: all 1s ease-in-out;}
 .hide_text::after {
 	content: '';
 	position: absolute;
