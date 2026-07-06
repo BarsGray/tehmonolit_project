@@ -24,7 +24,7 @@
 								</div>
 							</div>
 						<?php } echo '</div>';
-					// wp_pagenavi();
+					wp_pagenavi();
 				} else echo '<p>Раздел не заполнен</p>'; ?>
 				<?php the_field("text_after", $qo); ?>
 			</div>

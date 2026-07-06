@@ -16,7 +16,8 @@ add_action('after_setup_theme', function() { add_theme_support( 'html5', [ 'scri
 add_theme_support('post-thumbnails');
 add_image_size( 'custom-gallery-thumb_10_7', 1024, 720, true );
 add_image_size( 'custom-gallery-thumb_5_3', 500, 300, true );
-add_image_size( 'custom-gallery-thumb_35_30', 350, 300, true );
+// add_image_size( 'custom-gallery-thumb_35_30', 350, 300, true );
+add_image_size( 'custom-gallery-thumb_40_30', 400, 300, true );
 register_nav_menus();
 
 add_action('wp_enqueue_scripts', 'tehmonolit_th_scripts_style');

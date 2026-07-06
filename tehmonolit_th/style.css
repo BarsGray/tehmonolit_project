@@ -341,6 +341,7 @@ footer .container .phone {justify-self: end;}
   transition: color .3s ease-in-out;
   font-weight: 500;
   cursor: pointer;
+  color: #202020;
 }
 .content .show_all:hover,.avtopark_item .show_all:hover,.autopark_slider .show_all:hover {color: #FF6824;}
 .content .show_all:hover::after,.avtopark_item .show_all:hover::after,.autopark_slider .show_all:hover::after {opacity: 1;}
@@ -713,6 +714,23 @@ img.attachment-post-thumbnail {display: block;margin: 0 auto 30px;}
 	background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #F2F2F2);
 }
 .hide_text.active::after {display: none;}
+.wp-pagenavi {display: flex;gap: 5px;justify-content: center;}
+.wp-pagenavi>span,.wp-pagenavi>a {
+  display: block;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #202020;
+  line-height: 1;
+  min-width: 28px;
+  text-align: center;
+}
+.wp-pagenavi>a {
+  transition: all .3s ease-in-out;
+}
+.wp-pagenavi>span,.wp-pagenavi>a:hover {
+  background-color: #282828;
+  color: #fff;
+}
 @media (max-width: 1516px) {
   .img_bg {margin-top: calc(23vw - 800px);}
   .autopark_swiper {overflow: visible;}
@@ -927,7 +945,7 @@ img.attachment-post-thumbnail {display: block;margin: 0 auto 30px;}
 @media (max-width: 560px) {
   .avtopark_item {padding: 30px 0;flex-direction: column;}
   .category_page_item {flex-direction: column;}
-  .avtopark_item img,.content .category_page_item img {width: 100%;height: 220px;}
+  .avtopark_item img,.content .category_page_item img {width: 100%;height: 260px;}
   .gallery {grid-template-columns: repeat(1, 1fr);gap: 10px;}
   .gallery_item {border-radius: 12px;}
 }
@@ -961,7 +979,7 @@ img.attachment-post-thumbnail {display: block;margin: 0 auto 30px;}
 }
 @media (max-width: 450px) {
   .header_contacts .social_link.max {display: none;}
-  .avtopark_item img,.content .category_page_item img {height: 200px;}
+  .avtopark_item img,.content .category_page_item img {height: 220px;}
 }
 @media (max-width: 420px) {
   .img_bg {margin-top: calc(12vw - 400px);}

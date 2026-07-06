@@ -119,7 +119,7 @@ function show_avtopark_item ($value = '') {
   // $show_all       = ($isSingle) ? 11 : 14;
   ?>
   <div class="<?php echo $avtopark_calss; ?>">
-    <div class="img"><a <?php echo ($isSingle) ? 'data-fancybox':''; ?> href="<?php echo (!$isSingle) ? $link : $link_img; ?>"><?php the_post_thumbnail('custom-gallery-thumb_35_30'); ?></a></div>
+    <div class="img"><a <?php echo ($isSingle) ? 'data-fancybox':''; ?> href="<?php echo (!$isSingle) ? $link : $link_img; ?>"><?php the_post_thumbnail('custom-gallery-thumb_40_30'); ?></a></div>
     <div class="info">
       <div class="info_top">
         <?php if($vilet):?><p class="param">Вертикальный вылет - <?php echo $vilet; ?>.</p><?php endif; ?>
@@ -181,7 +181,7 @@ function show_avtopark() { ?>
 function show_avtopark_table() {
   $params = get_field('params');
   $vilet  = get_field('vilet'); ?>
-  <?php if(!empty($params) || !empty($vilet)): ?>
+  <?php if(!empty($params)): ?>
     <div class="table_params">
       <table>
         <tbody>
