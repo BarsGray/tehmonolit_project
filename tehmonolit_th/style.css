@@ -724,13 +724,8 @@ img.attachment-post-thumbnail {display: block;margin: 0 auto 30px;}
   min-width: 28px;
   text-align: center;
 }
-.wp-pagenavi>a {
-  transition: all .3s ease-in-out;
-}
-.wp-pagenavi>span,.wp-pagenavi>a:hover {
-  background-color: #282828;
-  color: #fff;
-}
+.wp-pagenavi>a {transition: all .3s ease-in-out;}
+.wp-pagenavi>span,.wp-pagenavi>a:hover {background-color: #282828;color: #fff;}
 @media (max-width: 1516px) {
   .img_bg {margin-top: calc(23vw - 800px);}
   .autopark_swiper {overflow: visible;}
