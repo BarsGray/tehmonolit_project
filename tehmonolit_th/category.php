@@ -19,7 +19,8 @@
 								<?php endif; ?>
 								<div class="category_page_item_rigth">
 									<p class="category_page_item_name"><a href="<?php echo $link; ?>"><?php the_title(); ?></a></p>
-									<p class="category_page_item_description"><?php echo wp_trim_words( get_the_content(), 20, '...' ); ?></p>
+									<?php $content = apply_filters('the_content', get_the_content()); ?>
+									<p class="category_page_item_description"><?php echo wp_trim_words($content, 20, '...'); ?></p>
 									<a class="category_page_item_btn" href="<?php echo $link; ?>">Узнать больше</a>
 								</div>
 							</div>
