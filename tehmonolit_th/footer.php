@@ -11,8 +11,8 @@
         <div class="copy_row">
           <div class="polit">
             <p><?php echo the_privacy_policy_link(); ?></p>
-            <p><a href="<?php echo get_page_link(3880); ?>">Политика использования файлов cookie</a></p>
-            <p><a href="<?php echo get_page_link(3882); ?>">Согласие на обработку персональных данных</a></p>
+            <p><a href="<?php echo get_page_link(470); ?>">Политика использования файлов cookie</a></p>
+            <p><a href="<?php echo get_page_link(474); ?>">Согласие на обработку персональных данных</a></p>
           </div>
           <p><a href="https://www.vzh.ru/"><img src="<?php bloginfo('template_url'); ?>/img/logo_vzh.svg" alt="vzh.ru"></a></p></div>
       </div>

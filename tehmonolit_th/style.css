@@ -745,7 +745,9 @@ img.attachment-post-thumbnail {display: block;margin: 0 auto 30px;}
   font-size: 12px;
   letter-spacing: 1px;
 }
-.gdpr>p {line-height: 1.4;}
+.gdpr>p {line-height: 1.3;font-weight: 300;}
+.gdpr>p a {color: #FF6824;transition: all .3s ease-in-out;}
+.gdpr>p a:hover {color: #202020;}
 .gdpr>a {padding: 8px 12px;color: #fff;background-color: #202020;transition: all .3s ease-in-out;display: block;width: fit-content;border: 1px solid #202020;}
 .gdpr>a:hover {background-color: #fff; color: #202020;}
 
@@ -1008,6 +1010,8 @@ img.attachment-post-thumbnail {display: block;margin: 0 auto 30px;}
   .content .show_all,.avtopark_item .show_all,.autopark_slider .show_all {font-size: 14px;}
   .autopark_slider .title {font-size: 20px;}
   .advantages_box {padding: 12px;}
+  .gdpr {max-width: unset;left: 12px;right: 12px;}
+  .gdpr>a {width: 100%;text-align: center;}
 }
 @media (max-width: 320px) {
   .img_bg {margin-top: calc(4vw - 400px);}
