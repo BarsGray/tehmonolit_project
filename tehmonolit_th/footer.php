@@ -8,7 +8,13 @@
         <?php if (get_field('max', FRONT_PAGE)): ?>
           <a class="footer_max" rel="nofollow" target="_blank" href="<?php the_field('max', FRONT_PAGE); ?>">Мы в MAX</a>
         <?php endif; ?>
-        <div class="copy_row"><span>2026</span><a href="https://www.vzh.ru/"><img src="<?php bloginfo('template_url'); ?>/img/logo_vzh.svg" alt="vzh.ru"></a></div>
+        <div class="copy_row">
+          <div class="polit">
+            <p><?php echo the_privacy_policy_link(); ?></p>
+            <p><a href="<?php echo get_page_link(3880); ?>">Политика использования файлов cookie</a></p>
+            <p><a href="<?php echo get_page_link(3882); ?>">Согласие на обработку персональных данных</a></p>
+          </div>
+          <p><a href="https://www.vzh.ru/"><img src="<?php bloginfo('template_url'); ?>/img/logo_vzh.svg" alt="vzh.ru"></a></p></div>
       </div>
     </footer>
   </div>
