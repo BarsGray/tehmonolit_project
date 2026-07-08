@@ -161,7 +161,7 @@ h6,.h6,.content h6,.content .h6 {font-size: 32px;} */
   transition: color .3s ease-in-out;
   white-space: nowrap;
 }
-.menu li .active,.menu li a:hover {color: #FF6824;}
+.menu li.current_page_item,.menu li a:hover {color: #FF6824;}
 .header_contacts {display: flex;justify-content: end;gap: 20px;}
 .phone {
   position: relative;
