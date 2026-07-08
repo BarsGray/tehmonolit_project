@@ -1,3 +1,4 @@
+jQuery(function ($) {
 // ======================= header =============
 function scrollTop() {
   let scroll_scr = window.scrollY;
@@ -170,3 +171,12 @@ if (!gallery_item.length == 0) {
 			}
 		});
 	}
+
+// ======================= Show cookie =============
+  $('.gdpr > a').click(function(e){
+		e.preventDefault();
+		document.cookie='gdpr_site=gdpr;path=/;max-age=86400000';
+		$(this).closest('.gdpr').remove();
+	});
+
+});

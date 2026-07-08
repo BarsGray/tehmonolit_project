@@ -12,6 +12,10 @@
       </div>
     </footer>
   </div>
+  <?php 
+    if(!isset($_COOKIE['gdpr_site']))
+      echo '<div class="gdpr"><p>Продолжая использовать наш веб-сайт, вы соглашаетесь на использование файлов cookie в соответствии с нашей <a href="'.get_privacy_policy_url().'" target="_blank">политикой конфиденциальности</a>.</p><a href="#">Хорошо</a></div>';
+  ?>
 <?php wp_footer(); ?>
 </body>
 
