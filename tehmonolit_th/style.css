@@ -39,7 +39,8 @@ a{color:inherit;}
 .overlay {
   position: fixed;
   z-index: 999;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(39, 39, 39, 0.84);
+  /* background: rgba(0, 0, 0, 0.3); */
   opacity: 0;
   top: 0;
   left: 0;
@@ -47,7 +48,7 @@ a{color:inherit;}
   height: 150%;
   visibility: hidden;
   transition: all .3s;
-  backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px); */
   transition: all .3s ease-in-out;
 }
 .overlay.visible { visibility: visible; opacity: 1; }
@@ -208,12 +209,12 @@ h6,.h6,.content h6,.content .h6 {font-size: 32px;} */
   stroke-linecap: round;
 }
 .ham7.active .line {stroke: #fff;}
-.ham7 .top {stroke-dasharray: 26 82;}
+.ham7 .top {stroke-dasharray: 21 82;stroke-dashoffset: -9px;}
 .ham7 .middle {stroke-dasharray: 40 111;}
-.ham7 .bottom {stroke-dasharray: 27 161;}
-.ham7.active .top {stroke-dasharray: 37 82;stroke-dashoffset: -62px;d: path("m 70 33 h -40 c 0 0 -6 1.3688 -6 8.5 c 0 7.1312 6 8.5013 6 8.5013 l 20 -0.0013");}
+.ham7 .bottom {stroke-dasharray: 22 161;stroke-dashoffset: -8px;}
+.ham7.active .top {stroke-dasharray: 17 82;stroke-dashoffset: -62px;}
 .ham7.active .middle {stroke-dashoffset: 23px;}
-.ham7.active .bottom {stroke-dasharray: 40 161;stroke-dashoffset: -83px;d: path("m 69.5754 67.0738 h -40 c -5.59275 0 -6.8736 -9.34858 1.37103 -9.34858 c 8.24463 0 19.0536 21.7971 19.0536 12.2748 l 0 -40");}
+.ham7.active .bottom {stroke-dasharray: 40 161;stroke-dashoffset: -83px;}
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 .burger_menu_btn {
   display: none;
@@ -769,7 +770,7 @@ img.attachment-post-thumbnail {display: block;margin: 0 auto 30px;}
     max-height: 0;
     margin-top: 0;
     opacity: 0;
-    transition: all .5s ease-in-out;
+    transition: all .3s ease;
   }
   .header_box .menu_wrap.active {max-height: 500px;margin-top: 30px;opacity: 1;}
   .header_contacts {gap: 12px;}
@@ -779,7 +780,7 @@ img.attachment-post-thumbnail {display: block;margin: 0 auto 30px;}
     text-align: end;
     line-height: 1.2;
   }
-  .burger_menu_btn {display: block;}
+  .burger_menu_btn {display: flex;}
 }
 @media (max-width: 1250px) {.menu ul {gap: 20px;}}
 @media (max-width: 1200px) {
