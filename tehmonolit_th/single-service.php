@@ -6,7 +6,7 @@
 			<?php the_field("text_before"); ?>
     </div>
     <?php show_avtopark_item('single');
-          show_avtopark_table(); ?>
+          show_avtopark_table();?>
     <div class="content">
       <?php the_content(); ?>
 			<?php the_field("text_after"); ?>

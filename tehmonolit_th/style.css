@@ -26,14 +26,16 @@ a{color:inherit;}
 .bread,
 .bread_crumb {
   display: flex;
+  align-items: center;
   gap: 16px;
   margin: 40px 0;
   font-size: 14px;
+  line-height: 1.4;
   flex-wrap: wrap;
 }
 .bread .kb_title,.bread_crumb .place {color: #FF833D;}
 .bread a {transition: color .3s ease-in-out;}
-.bread .kb_title,.bread a {white-space: nowrap;}
+/* .bread .kb_title,.bread a {white-space: nowrap;} */
 .bread a:hover {color: #FF833D;}
 /* =========================== bread_crumb ====================================== */
 .overlay {
