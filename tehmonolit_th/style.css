@@ -368,6 +368,13 @@ footer .container .phone {justify-self: end;}
   flex-direction: column;
   gap: 8px;
   line-height: 1.4;
+  height: auto;
+}
+.autopark_slider .slider_item .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 .avtopark_item img,.autopark_slider .slider_item img {
   width: 100%;
